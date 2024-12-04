@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLinks } from "../../components/NavMenu/NavMenu";
+import { NavLinks } from "../../components/navLinks/NavLinks";
 import { Button } from "../../components/Button/Button";
 import { Icon } from "../../components/Icon/Icon";
 

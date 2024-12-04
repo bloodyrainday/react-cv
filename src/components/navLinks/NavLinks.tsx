@@ -5,15 +5,15 @@ type Props = {};
 
 export const NavLinks = (props: Props) => {
   return (
-    <StyledNavMenu>
+    <StyledNavLinks>
       <a href="#">Home</a>
 
       <a href="#">Projects</a>
-    </StyledNavMenu>
+    </StyledNavLinks>
   );
 };
 
-const StyledNavMenu = styled.nav`
+const StyledNavLinks = styled.nav`
   display: flex;
   justify-content: space-between;
 `;
