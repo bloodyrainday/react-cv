@@ -27,5 +27,4 @@ export const Skills = (props: Props) => {
 const StyledSkills = styled.section`
   padding: 140px 171px 180px 189px;
   background-color: lightgreen;
-  min-height: 100vh;
 `;
