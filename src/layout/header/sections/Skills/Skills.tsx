@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
 import { Icon } from "../../../../components/Icon/Icon";
 import { SectionTitle } from "../../../../components/SectionTitle";
-import { Skill } from "./Skill/Skill";
+import { Skill } from "./skill/Skill";
 
 type Props = {};
 
