@@ -1,9 +1,23 @@
 import React from "react";
+import styled from "styled-components";
 
 type ButtonPropsType = {
-  title: string;
+  title?: string;
 };
 
 export const Button = (props: ButtonPropsType) => {
-  return <button>{props.title}</button>;
+  return <StyledButton>{props.title}</StyledButton>;
 };
+
+const StyledButton = styled.button`
+  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.buttonText};
+  border-radius: 6px;
+  padding-top: 12px;
+  padding-bottom: 13px;
+  font-size: 16px;
+  line-height: 19.5px;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+`;

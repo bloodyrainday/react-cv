@@ -19,6 +19,7 @@ const StyledHeader = styled.header`
   padding: 27px 195px 28px 188px;
   display: grid;
   grid-template-columns: 4fr 1fr;
+  align-items: center;
   gap: 87px;
   background: lightgreen;
 `;
