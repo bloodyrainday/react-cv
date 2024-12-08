@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { NavLinks } from "../../components/navLinks/NavLinks";
 import { Button } from "../../components/Button/Button";
-import { Icon } from "../../components/Icon/Icon";
 
 type Props = {};
 
@@ -22,4 +21,8 @@ const StyledHeader = styled.header`
   align-items: center;
   gap: 87px;
   background: lightgreen;
+
+  button {
+    width: 105px;
+  }
 `;

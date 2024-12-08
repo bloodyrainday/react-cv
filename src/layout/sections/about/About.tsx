@@ -1,7 +1,7 @@
 import React from "react";
-import { SectionTitle } from "../../../../components/SectionTitle";
+import { SectionTitle } from "../../../components/SectionTitle";
 import styled from "styled-components";
-import { FlexWrapper } from "../../../../components/FlexWrapper";
+import { FlexWrapper } from "../../../components/FlexWrapper";
 
 type Props = {};
 

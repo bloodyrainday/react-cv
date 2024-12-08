@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitle } from "../../../../components/SectionTitle";
-import { FlexWrapper } from "../../../../components/FlexWrapper";
-import { Button } from "../../../../components/Button/Button";
+import { SectionTitle } from "../../../components/SectionTitle";
+import { FlexWrapper } from "../../../components/FlexWrapper";
+import { Button } from "../../../components/Button/Button";
 import { Project } from "./project/Project";
-import projectImage from "../../../../assets/images/picture_2.png";
+import projectImage from "../../../assets/images/picture_2.png";
 
 type Props = {};
 
@@ -37,4 +37,15 @@ const StyledProjects = styled.section`
   padding: 140px 180px 180px 189px;
   background-color: lightblue;
   min-height: 100vh;
+
+  ${FlexWrapper} {
+    margin-bottom: 37px;
+  }
+
+  ${FlexWrapper} ~ button {
+    display: block;
+    width: 305px;
+    height: 56px;
+    margin: 0 auto;
+  }
 `;

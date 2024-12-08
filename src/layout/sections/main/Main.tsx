@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "../../../../components/Button/Button";
-import { Icon } from "../../../../components/Icon/Icon";
+import { Button } from "../../../components/Button/Button";
+import { Icon } from "../../../components/Icon/Icon";
 import styled from "styled-components";
-import { FlexWrapper } from "../../../../components/FlexWrapper";
+import { FlexWrapper } from "../../../components/FlexWrapper";
 
 type Props = {};
 
@@ -51,4 +51,8 @@ const StyledMain = styled.div`
 
 const UserInfo = styled.div`
   max-width: 520px;
+
+  button {
+    width: 134px;
+  }
 `;

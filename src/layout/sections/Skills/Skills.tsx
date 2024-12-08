@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { FlexWrapper } from "../../../../components/FlexWrapper";
-import { Icon } from "../../../../components/Icon/Icon";
-import { SectionTitle } from "../../../../components/SectionTitle";
+import { FlexWrapper } from "../../../components/FlexWrapper";
+import { Icon } from "../../../components/Icon/Icon";
+import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
 
 type Props = {};
