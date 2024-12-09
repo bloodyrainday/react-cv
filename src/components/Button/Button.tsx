@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type ButtonPropsType = {
-  title?: string;
+  title: string;
 };
 
 export const Button = (props: ButtonPropsType) => {
@@ -20,4 +20,5 @@ const StyledButton = styled.button`
   border: none;
   padding-left: 20px;
   padding-right: 20px;
+  cursor: pointer;
 `;

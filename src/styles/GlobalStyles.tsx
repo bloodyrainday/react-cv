@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Montserrat", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
-        
+        color: #151717;
         
 
         ul {
