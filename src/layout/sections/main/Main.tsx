@@ -9,7 +9,7 @@ type Props = {};
 export const Main = (props: Props) => {
   return (
     <StyledMain>
-      <FlexWrapper>
+      <FlexWrapper justify="space-between">
         <UserInfo>
           <h1>web developer</h1>
           <span>Mikita Bialko</span>
@@ -39,14 +39,17 @@ export const Main = (props: Props) => {
 };
 
 const StyledMain = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  justify-content: space-between;
   gap: 16px;
   margin-top: 141px;
   padding-left: 182px;
   padding-right: 169px;
   min-height: 100vh;
+
+  svg {
+    margin: 0 auto;
+  }
 `;
 
 const UserInfo = styled.div`
