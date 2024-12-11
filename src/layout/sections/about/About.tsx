@@ -2,6 +2,7 @@ import React from "react";
 import { SectionTitle } from "../../../components/SectionTitle";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
+import { theme } from "../../../styles/Theme.styled";
 
 type Props = {};
 
@@ -33,7 +34,6 @@ const StyledAbout = styled.section`
 
 const Text = styled.p`
   max-width: 865px;
-  color: #1f2626;
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
@@ -45,7 +45,7 @@ const StyledSpan = styled.span`
   display: block;
   width: 5px;
   height: 116px;
-  background-color: #5222d0;
+  background-color: ${theme.colors.primary};
   margin-right: 17px;
   border-radius: 2px;
 `;

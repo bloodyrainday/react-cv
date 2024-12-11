@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Button } from "../../../components/Button/Button";
+import { theme } from "../../../styles/Theme.styled";
 
 type Props = {};
 
@@ -23,7 +24,6 @@ export const Contacts = (props: Props) => {
 };
 
 const StyledContacts = styled.section`
-  background-color: lightpink;
   padding-top: 140px;
   ${SectionTitle} {
     padding-left: 189px;
@@ -54,7 +54,7 @@ const TextArea = styled.textarea`
   width: 100%;
   height: 165px;
   border-radius: 6px;
-  border: 2px solid #5222d0;
+  border: 2px solid ${theme.colors.primary};
   padding: 15px 18px 16px 18px;
   margin-bottom: 22px;
 `;

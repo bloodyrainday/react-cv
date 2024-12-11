@@ -1,51 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { FlexWrapper } from "../../components/FlexWrapper";
-import { Icon } from "../../components/Icon/Icon";
-import { NavLinks } from "../../components/navLinks/NavLinks";
+import SocialLink from "../../components/SocialLink";
 
 type Props = {};
 
 export const Footer = (props: Props) => {
   return (
     <StyledFooter>
-      <ContactList>
-        <ContactItem>
-          <ContactLink>
-            <Icon
-              iconId="gmailIcon"
-              width="38px"
-              height="38px"
-              viewBox="0 0 38px 38px"
-            />
-            <ContactName>GMAIL</ContactName>
-          </ContactLink>
-        </ContactItem>
+      <List>
+        <Item>
+          <SocialLink title="GMAIL" />
+        </Item>
 
-        <ContactItem>
-          <ContactLink>
-            <Icon
-              iconId="linkedinIcon"
-              width="38px"
-              height="38px"
-              viewBox="0 0 38px 38px"
-            />
-            <ContactName>LINKEDIN</ContactName>
-          </ContactLink>
-        </ContactItem>
+        <Item>
+          <SocialLink title="LINKEDIN" />
+        </Item>
 
-        <ContactItem>
-          <ContactLink>
-            <Icon
-              iconId="githubIcon"
-              width="38px"
-              height="38px"
-              viewBox="0 0 38px 38px"
-            />
-            <ContactName>GITHUB</ContactName>
-          </ContactLink>
-        </ContactItem>
-      </ContactList>
+        <Item>
+          <SocialLink title="GITHUB" />
+        </Item>
+      </List>
 
       <NavContactList>
         <NavContactItem>
@@ -66,29 +40,13 @@ const StyledFooter = styled.footer`
   margin-top: 190px;
 `;
 
-const ContactList = styled.ul`
+const List = styled.ul`
   display: flex;
   justify-content: center;
   gap: 73px;
 `;
 
-const ContactItem = styled.li``;
-
-const ContactLink = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-`;
-
-const ContactName = styled.span`
-  color: #1f2626;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 11.11px;
-  letter-spacing: 0.12em;
-  text-align: center;
-`;
+const Item = styled.li``;
 
 const NavContactList = styled.ul`
   display: flex;
@@ -99,7 +57,9 @@ const NavContactList = styled.ul`
 
 const NavContactItem = styled.li``;
 
-const NavContactLink = styled.a``;
+const NavContactLink = styled.a`
+  cursor: pointer;
+`;
 
 const SmallText = styled.small`
   display: block;

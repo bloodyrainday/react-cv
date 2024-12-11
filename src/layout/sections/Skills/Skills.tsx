@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { Icon } from "../../../components/Icon/Icon";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
 
@@ -13,12 +12,12 @@ export const Skills = (props: Props) => {
       <SectionTitle>Skills</SectionTitle>
 
       <FlexWrapper wrap={"wrap"} gap="60px" justify="space-between">
-        <Skill skillTitle="JAVASCRIPT" iconId="jsIcon"></Skill>
-        <Skill skillTitle="TYPESCRIPT" iconId="tsIcon"></Skill>
-        <Skill skillTitle="REACT" iconId="reactIcon"></Skill>
-        <Skill skillTitle="REDUX" iconId="reduxIcon"></Skill>
-        <Skill skillTitle="STYLED COMPONENTS" iconId="scIcon"></Skill>
-        <Skill skillTitle="GIT" iconId="gitIcon"></Skill>
+        <Skill title="JAVASCRIPT" iconId="jsIcon"></Skill>
+        <Skill title="TYPESCRIPT" iconId="tsIcon"></Skill>
+        <Skill title="REACT" iconId="reactIcon"></Skill>
+        <Skill title="REDUX" iconId="reduxIcon"></Skill>
+        <Skill title="STYLED COMPONENTS" iconId="scIcon"></Skill>
+        <Skill title="GIT" iconId="gitIcon"></Skill>
       </FlexWrapper>
     </StyledSkills>
   );
@@ -26,5 +25,4 @@ export const Skills = (props: Props) => {
 
 const StyledSkills = styled.section`
   padding: 140px 171px 180px 189px;
-  background-color: lightgreen;
 `;

@@ -35,7 +35,6 @@ export const Projects = (props: Props) => {
 
 const StyledProjects = styled.section`
   padding: 140px 180px 180px 189px;
-  background-color: lightblue;
   min-height: 100vh;
 
   ${FlexWrapper} {

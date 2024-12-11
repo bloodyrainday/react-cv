@@ -11,13 +11,13 @@ export const Main = (props: Props) => {
     <StyledMain>
       <FlexWrapper justify="space-between">
         <UserInfo>
-          <h1>web developer</h1>
-          <span>Mikita Bialko</span>
-          <p>
+          <Title>web developer</Title>
+          <Name>Mikita Bialko</Name>
+          <Text>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt.
-          </p>
+          </Text>
           <Button title="Contact me" />
         </UserInfo>
 
@@ -59,3 +59,7 @@ const UserInfo = styled.div`
     width: 134px;
   }
 `;
+
+const Title = styled.h1``;
+const Name = styled.span``;
+const Text = styled.p``;

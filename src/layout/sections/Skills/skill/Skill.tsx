@@ -4,14 +4,14 @@ import { Icon } from "../../../../components/Icon/Icon";
 
 type SkillPropsType = {
   iconId: string;
-  skillTitle: string;
+  title: string;
 };
 
 export const Skill = (props: SkillPropsType) => {
   return (
     <StyledSkill>
       <Icon iconId={props.iconId} />
-      <SkillTitle>{props.skillTitle}</SkillTitle>
+      <SkillTitle>{props.title}</SkillTitle>
     </StyledSkill>
   );
 };
@@ -24,5 +24,4 @@ const SkillTitle = styled.h3`
   line-height: 19.5px;
   letter-spacing: 0.1354em;
   text-align: center;
-  color: #1f2626;
 `;

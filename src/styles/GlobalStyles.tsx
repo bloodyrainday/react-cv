@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { theme } from "./Theme.styled";
 
 export const GlobalStyles = createGlobalStyle`
     *,
@@ -14,7 +15,8 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Montserrat", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
-        color: #151717;
+        color: ${theme.colors.font};
+        background-color: ${theme.colors.colorBg};
         
 
         ul {
