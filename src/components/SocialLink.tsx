@@ -27,6 +27,14 @@ const StyledSocialLink = styled.a`
   flex-direction: column;
   align-items: center;
   gap: 9px;
+  cursor: pointer;
+
+  &:hover {
+    svg {
+      opacity: 0.8;
+      transition: opacity 0.3s ease-in;
+    }
+  }
 `;
 
 const ContactName = styled.span`

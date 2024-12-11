@@ -21,4 +21,9 @@ const StyledButton = styled.button`
   padding-left: 20px;
   padding-right: 20px;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in;
+  }
 `;

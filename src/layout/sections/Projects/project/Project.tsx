@@ -28,6 +28,7 @@ const StyledProject = styled.div`
   height: 636px;
   background-color: #f5f2fd;
   border-radius: 6px;
+  box-shadow: 2px 2px 32px 0px #28262c26;
 `;
 
 const ProjectInfo = styled.div`

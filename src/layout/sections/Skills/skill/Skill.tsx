@@ -16,7 +16,12 @@ export const Skill = (props: SkillPropsType) => {
   );
 };
 
-const StyledSkill = styled.div``;
+const StyledSkill = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+`;
 
 const SkillTitle = styled.h3`
   font-size: 16px;

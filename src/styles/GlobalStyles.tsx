@@ -26,5 +26,11 @@ export const GlobalStyles = createGlobalStyle`
         a {
             text-decoration: none;
         }
+
+        button {
+            border: none;
+            background-color: unset;
+            cursor: pointer;
+        }
     }
 `;

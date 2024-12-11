@@ -3,31 +3,31 @@ import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Button } from "../../../components/Button/Button";
 import { theme } from "../../../styles/Theme.styled";
+import { Container } from "../../../components/Container";
 
 type Props = {};
 
 export const Contacts = (props: Props) => {
   return (
     <StyledContacts>
-      <SectionTitle>Contacts</SectionTitle>
+      <Container>
+        <SectionTitle>Contacts</SectionTitle>
 
-      <StyledForm>
-        <Field placeholder="name" required />
+        <StyledForm>
+          <Field placeholder="name" required />
 
-        <Field placeholder="subject" required />
+          <Field placeholder="subject" required />
 
-        <TextArea placeholder="message..." />
-        <Button title="Submit" />
-      </StyledForm>
+          <TextArea placeholder="message..." />
+          <Button title="Submit" />
+        </StyledForm>
+      </Container>
     </StyledContacts>
   );
 };
 
 const StyledContacts = styled.section`
-  padding-top: 140px;
-  ${SectionTitle} {
-    padding-left: 189px;
-  }
+  margin-bottom: 190px;
 `;
 
 const StyledForm = styled.form`
