@@ -1,21 +1,21 @@
 import React from "react";
 import { Icon } from "./Icon/Icon";
 import styled from "styled-components";
+import { theme } from "../styles/Theme.styled";
 
 type SocialLinkPropsType = {
-  title: string;
+  iconId: string;
 };
 
 const SocialLink = (props: SocialLinkPropsType) => {
   return (
     <StyledSocialLink>
       <Icon
-        iconId="linkedinIcon"
+        iconId={props.iconId}
         width="38px"
         height="38px"
         viewBox="0 0 38px 38px"
       />
-      <ContactName>{props.title}</ContactName>
     </StyledSocialLink>
   );
 };
@@ -23,25 +23,24 @@ const SocialLink = (props: SocialLinkPropsType) => {
 export default SocialLink;
 
 const StyledSocialLink = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-  cursor: pointer;
+  text-align: center;
+  background-color: ${theme.colors.primary};
+  border-radius: 50%;
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+
+  svg {
+    color: ${theme.colors.icon};
+  }
 
   &:hover {
+    background-color: ${theme.colors.icon};
+    transition: background-color 0.3s ease-in;
+    outline: 2px solid ${theme.colors.primary};
+
     svg {
-      opacity: 0.8;
-      transition: opacity 0.3s ease-in;
+      color: ${theme.colors.primary};
     }
   }
-`;
-
-const ContactName = styled.span`
-  color: #1f2626;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 11.11px;
-  letter-spacing: 0.12em;
-  text-align: center;
 `;

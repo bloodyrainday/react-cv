@@ -18,7 +18,7 @@ export const Contacts = (props: Props) => {
 
           <Field placeholder="subject" required />
 
-          <TextArea placeholder="message..." />
+          <Field placeholder="message..." as="textarea" />
           <Button title="Submit" />
         </StyledForm>
       </Container>
@@ -28,6 +28,13 @@ export const Contacts = (props: Props) => {
 
 const StyledContacts = styled.section`
   margin-bottom: 190px;
+
+  textarea {
+    width: 100%;
+    height: 165px;
+    margin-bottom: 22px;
+    resize: none;
+  }
 `;
 
 const StyledForm = styled.form`
@@ -42,19 +49,18 @@ const StyledForm = styled.form`
 
 const Field = styled.input`
   width: 100%;
-  height: 48px;
   border-radius: 6px;
   border: 1px solid #534084;
-  padding: 15px 18px 16px 18px;
+  padding: 15px 18px 15px 18px;
   margin-bottom: 30px;
   font-size: 14px;
-`;
+  font-family: "Montserrat", sans-serif;
 
-const TextArea = styled.textarea`
-  width: 100%;
-  height: 165px;
-  border-radius: 6px;
-  border: 2px solid ${theme.colors.primary};
-  padding: 15px 18px 16px 18px;
-  margin-bottom: 22px;
+  &::placeholder {
+    color: #919b9b;
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${theme.colors.primary};
+  }
 `;

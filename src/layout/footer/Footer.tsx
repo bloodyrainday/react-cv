@@ -12,15 +12,18 @@ export const Footer = (props: Props) => {
       <Container>
         <List>
           <Item>
-            <SocialLink title="GMAIL" />
+            <SocialLink iconId="gmailIcon" />
+            <SocialName>GMAIL</SocialName>
           </Item>
 
           <Item>
-            <SocialLink title="LINKEDIN" />
+            <SocialLink iconId="linkedinIcon" />
+            <SocialName>LINKEDIN</SocialName>
           </Item>
 
           <Item>
-            <SocialLink title="GITHUB" />
+            <SocialLink iconId="githubIcon" />
+            <SocialName>GITHUB</SocialName>
           </Item>
         </List>
 
@@ -34,7 +37,7 @@ export const Footer = (props: Props) => {
           </NavContactItem>
         </NavContactList>
 
-        <SmallText>WEB DEVELOPER 2024</SmallText>
+        <SmallText>FRONTEND DEVELOPER 2024</SmallText>
       </Container>
     </StyledFooter>
   );
@@ -48,7 +51,12 @@ const List = styled.ul`
   gap: 73px;
 `;
 
-const Item = styled.li``;
+const Item = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+`;
 
 const NavContactList = styled.ul`
   display: flex;
@@ -80,13 +88,20 @@ const NavContactItem = styled.li`
   }
 `;
 
-const NavContactLink = styled.a`
-  cursor: pointer;
-`;
+const NavContactLink = styled.a``;
 
 const SmallText = styled.small`
   display: block;
   text-align: center;
   margin-top: 49px;
   margin-bottom: 100px;
+`;
+
+const SocialName = styled.span`
+  color: ${theme.colors.font};
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 11.11px;
+  letter-spacing: 0.12em;
+  text-align: center;
 `;
