@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/Theme.styled";
+import Link from "../Link";
 
 type NavLinksPropsType = {
   items: Array<string>;
@@ -13,7 +14,7 @@ export const NavLinks = (props: NavLinksPropsType) => {
         {props.items.map((item, index: number) => {
           return (
             <NavItem key={index}>
-              <NavLink href="#">{item}</NavLink>
+              <Link title={item} />
             </NavItem>
           );
         })}
@@ -31,27 +32,27 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   position: relative;
-
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    bottom: -10px;
-    height: 8px;
-    width: 100%;
-    background-color: ${theme.colors.primary};
-    border-radius: 4px;
-    transform: scale(0);
-  }
-
-  &:hover {
-    &::before {
-      transform: scale(1);
-      transition: transform 0.3s ease-in-out;
-    }
-  }
 `;
 
-const NavLink = styled.a`
-  color: ${theme.colors.font};
-`;
+// const NavLink = styled.a`
+//   color: ${theme.colors.font};
+
+//   &::before {
+//     content: "";
+//     display: inline-block;
+//     position: absolute;
+//     bottom: -10px;
+//     height: 8px;
+//     width: 100%;
+//     background-color: ${theme.colors.primary};
+//     border-radius: 4px;
+//     transform: scale(0);
+//   }
+
+//   &:hover {
+//     &::before {
+//       transform: scale(1);
+//       transition: transform 0.3s ease-in-out;
+//     }
+//   }
+// `;

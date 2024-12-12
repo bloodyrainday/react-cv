@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SocialLink from "../../components/SocialLink";
 import { Container } from "../../components/Container";
 import { theme } from "../../styles/Theme.styled";
+import Link from "../../components/Link";
 
 type Props = {};
 
@@ -29,11 +30,11 @@ export const Footer = (props: Props) => {
 
         <NavContactList>
           <NavContactItem>
-            <NavContactLink>Projects</NavContactLink>
+            <Link title="Projects" />
           </NavContactItem>
 
           <NavContactItem>
-            <NavContactLink>Contact</NavContactLink>
+            <Link title="Contacts" />
           </NavContactItem>
         </NavContactList>
 
