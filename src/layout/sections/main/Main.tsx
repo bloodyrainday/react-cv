@@ -4,7 +4,6 @@ import { Icon } from "../../../components/Icon/Icon";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
-import { getByDisplayValue } from "@testing-library/react";
 import { theme } from "../../../styles/Theme.styled";
 
 type Props = {};
@@ -47,9 +46,12 @@ export const Main = (props: Props) => {
 
 const StyledMain = styled.section`
   display: flex;
-  margin-top: 141px;
-  margin-bottom: 220px;
-  min-height: 100vh;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0;
+  padding-top: 15vh;
+  height: 100vh;
 `;
 
 const UserInfo = styled.div`
@@ -84,7 +86,8 @@ const Text = styled.p`
 `;
 
 const ButtonArrow = styled.button`
-  display: block;
-  margin: 0 auto;
-  margin-top: 16px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 `;

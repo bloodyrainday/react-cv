@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 type ButtonPropsType = {
   title: string;
+  as?: React.ElementType | keyof JSX.IntrinsicElements;
 };
 
 export const Button = (props: ButtonPropsType) => {
-  return <StyledButton>{props.title}</StyledButton>;
+  return <StyledButton as={props.as}>{props.title}</StyledButton>;
 };
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<ButtonPropsType>`
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.buttonText};
   border-radius: 6px;

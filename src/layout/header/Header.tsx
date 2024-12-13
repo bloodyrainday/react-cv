@@ -4,6 +4,7 @@ import { NavLinks } from "../../components/navLinks/NavLinks";
 import { Button } from "../../components/Button/Button";
 import { Container } from "../../components/Container";
 import { GridWrapper } from "../../components/GridWrapper";
+import { theme } from "../../styles/Theme.styled";
 
 type Props = {};
 
@@ -15,7 +16,7 @@ export const Header = (props: Props) => {
       <Container>
         <GridWrapper gridTemplateColumns="4fr 0fr" align="center" gap="87px">
           <NavLinks items={navItems} />
-          <Button title="Contact" />
+          <Button as="a" title="Contact" />
         </GridWrapper>
       </Container>
     </StyledHeader>
@@ -24,6 +25,8 @@ export const Header = (props: Props) => {
 
 const StyledHeader = styled.header`
   padding: 27px 0 28px 0;
+  background-color: ${theme.colors.colorBg};
+  opacity: 0.9;
   position: fixed;
   top: 0;
   left: 0;

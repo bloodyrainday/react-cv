@@ -39,9 +39,12 @@ export const Projects = (props: Props) => {
 const StyledProjects = styled.section`
   margin-bottom: 140px;
 
+  ${SectionTitle} {
+    margin-bottom: 30px;
+  }
+
   ${FlexWrapper} {
     margin-bottom: 35px;
-    margin-top: 30px;
 
     & button {
       opacity: 1;
