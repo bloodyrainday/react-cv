@@ -4,10 +4,15 @@ import styled from "styled-components";
 type ButtonPropsType = {
   title: string;
   as?: React.ElementType | keyof JSX.IntrinsicElements;
+  type?: string;
 };
 
 export const Button = (props: ButtonPropsType) => {
-  return <StyledButton as={props.as}>{props.title}</StyledButton>;
+  return (
+    <StyledButton as={props.as} type={props.type}>
+      {props.title}
+    </StyledButton>
+  );
 };
 
 const StyledButton = styled.button<ButtonPropsType>`

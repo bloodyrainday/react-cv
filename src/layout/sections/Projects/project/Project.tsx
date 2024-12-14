@@ -23,7 +23,7 @@ export const Project = (props: ProjectPropsType) => {
   );
 };
 
-const StyledProject = styled.div`
+const StyledProject = styled.article`
   width: 522px;
   height: 636px;
   background-color: #f5f2fd;

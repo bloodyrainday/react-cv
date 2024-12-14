@@ -19,7 +19,7 @@ export const Contacts = (props: Props) => {
           <Field placeholder="subject" required />
 
           <Field placeholder="message..." as="textarea" />
-          <Button title="Submit" />
+          <Button title="Submit" type="submit" />
         </StyledForm>
       </Container>
     </StyledContacts>
