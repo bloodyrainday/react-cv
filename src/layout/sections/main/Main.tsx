@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../../../components/Button/Button";
 import { Icon } from "../../../components/Icon/Icon";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme.styled";
@@ -90,4 +90,26 @@ const ButtonArrow = styled.button`
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+
+  animation-name: animatedButtonArrow;
+
+  @keyframes animatedButtonArrow {
+    from {
+      transform: translateX(0);
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateX(0);
+      transform: translateY(10px);
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
 `;
