@@ -1,5 +1,4 @@
 import React from "react";
-import { GridWrapper } from "../../components/GridWrapper";
 import { Button } from "../../components/Button/Button";
 import { NavLinks } from "../../components/navLinks/NavLinks";
 import { FlexWrapper } from "../../components/FlexWrapper";
@@ -18,8 +17,8 @@ const MobileMenu = (props: MobileMenuPropsType) => {
       </BurgerButton>
 
       <FlexWrapper gap="87px">
-        <NavLinks items={props.items} />
-        <Button as="a" title="Contact" />
+        {/* <NavLinks items={props.items} />
+        <Button as="a" title="Contact" /> */}
       </FlexWrapper>
     </StyledMobileMenu>
   );
@@ -31,8 +30,44 @@ const StyledMobileMenu = styled.div`
   display: none;
 
   @media ${theme.media.tablet} {
-    display: block;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
   }
 `;
 
-const BurgerButton = styled.div``;
+const BurgerButton = styled.button`
+  width: 50px;
+  height: 30px;
+
+  span {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: ${theme.colors.primary};
+    border-radius: 10px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 4px;
+      background-color: ${theme.colors.primary};
+      position: absolute;
+      transform: translateY(-10px);
+      border-radius: 10px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 4px;
+      background-color: ${theme.colors.primary};
+      position: absolute;
+      transform: translateY(10px);
+      border-radius: 10px;
+    }
+  }
+`;

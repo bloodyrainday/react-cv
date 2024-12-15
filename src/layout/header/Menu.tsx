@@ -26,4 +26,8 @@ const StyledMenu = styled.div`
   @media ${theme.media.tablet} {
     display: none;
   }
+
+  ${GridWrapper} > button {
+    width: 105px;
+  }
 `;
