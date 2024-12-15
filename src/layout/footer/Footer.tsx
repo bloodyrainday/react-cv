@@ -96,6 +96,7 @@ const SmallText = styled.small`
   text-align: center;
   margin-top: 49px;
   font-size: 10px;
+  margin-bottom: 15px;
 `;
 
 const SocialName = styled.span`

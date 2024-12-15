@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../../../components/Button/Button";
 import { Icon } from "../../../components/Icon/Icon";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme.styled";

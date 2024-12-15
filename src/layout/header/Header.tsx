@@ -5,6 +5,8 @@ import { Button } from "../../components/Button/Button";
 import { Container } from "../../components/Container";
 import { GridWrapper } from "../../components/GridWrapper";
 import { theme } from "../../styles/Theme.styled";
+import MobileMenu from "./MobileMenu";
+import Menu from "./Menu";
 
 type Props = {};
 
@@ -14,10 +16,8 @@ export const Header = (props: Props) => {
   return (
     <StyledHeader>
       <Container>
-        <GridWrapper gridTemplateColumns="4fr 0fr" align="center" gap="87px">
-          <NavLinks items={navItems} />
-          <Button as="a" title="Contact" />
-        </GridWrapper>
+        <Menu items={navItems} />
+        <MobileMenu items={navItems} />
       </Container>
     </StyledHeader>
   );
