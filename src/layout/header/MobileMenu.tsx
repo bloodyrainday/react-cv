@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../../components/Button/Button";
 import { NavLinks } from "../../components/navLinks/NavLinks";
 import { FlexWrapper } from "../../components/FlexWrapper";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../../styles/Theme.styled";
 
 type MobileMenuPropsType = {
@@ -12,14 +12,14 @@ type MobileMenuPropsType = {
 const MobileMenu = (props: MobileMenuPropsType) => {
   return (
     <StyledMobileMenu>
-      <BurgerButton>
+      <BurgerButton isOpen={false}>
         <span></span>
       </BurgerButton>
 
-      <FlexWrapper gap="87px">
-        {/* <NavLinks items={props.items} />
-        <Button as="a" title="Contact" /> */}
-      </FlexWrapper>
+      <MobileMenuPopup isOpen={false}>
+        <NavLinks items={props.items} />
+        <Button as="a" title="Contact" />
+      </MobileMenuPopup>
     </StyledMobileMenu>
   );
 };
@@ -36,10 +36,10 @@ const StyledMobileMenu = styled.div`
   }
 `;
 
-const BurgerButton = styled.button`
+const BurgerButton = styled.button<{ isOpen: boolean }>`
   width: 50px;
   height: 30px;
-
+  z-index: 9999;
   span {
     display: block;
     position: absolute;
@@ -69,5 +69,48 @@ const BurgerButton = styled.button`
       transform: translateY(10px);
       border-radius: 10px;
     }
+
+    ${(props) =>
+      props.isOpen &&
+      css`
+        & {
+          background-color: transparent;
+        }
+
+        &::before {
+          transform: rotate(-45deg) translateY(0);
+        }
+
+        &::after {
+          transform: rotate(45deg) translateY(0);
+        }
+      `}
   }
+`;
+
+const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
+  display: none;
+  ${(props) =>
+    props.isOpen &&
+    css`
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 1);
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+      }
+    `}
 `;
