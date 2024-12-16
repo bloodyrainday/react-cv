@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme.styled";
+import { font } from "../../../styles/Common";
 
 type Props = {};
 
@@ -44,16 +45,6 @@ export const Main = (props: Props) => {
   );
 };
 
-const StyledMain = styled.section`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 0;
-  padding-top: 15vh;
-  height: 100vh;
-`;
-
 const UserInfo = styled.div`
   max-width: 520px;
 
@@ -62,19 +53,49 @@ const UserInfo = styled.div`
   }
 `;
 
+const StyledMain = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0;
+  padding-top: 15vh;
+  height: 100vh;
+
+  @media screen and (max-width: 1050px) {
+    ${FlexWrapper} {
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+
+    ${FlexWrapper} > svg {
+      margin-bottom: 70px;
+    }
+
+    ${UserInfo} {
+      text-align: center;
+    }
+  }
+`;
+
 const Title = styled.h1`
-  font-size: 20px;
-  font-weight: 400;
+  ${font({ weight: 400, Fmax: 20, Fmin: 16 })}
   line-height: 23px;
   margin-bottom: 10px;
+
+  @media ${theme.media.mobile} {
+    margin-bottom: 12px;
+  }
 `;
 
 const Name = styled.span`
-  font-size: 72px;
-  font-weight: 600;
-  line-height: 87.77px;
-  color: ${theme.colors.primary};
+  ${font({ weight: 600, color: `${theme.colors.primary}`, Fmax: 72, Fmin: 40 })}
   margin-bottom: 11px;
+  white-space: nowrap;
+
+  @media ${theme.media.mobile} {
+    margin-bottom: 16px;
+  }
 `;
 
 const Text = styled.p`
@@ -82,7 +103,11 @@ const Text = styled.p`
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.04em;
-  margin-bottom: 29px;
+  margin-bottom: 30px;
+
+  @media ${theme.media.mobile} {
+    margin-bottom: 16px;
+  }
 `;
 
 const ButtonArrow = styled.button`

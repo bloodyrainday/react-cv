@@ -7,16 +7,21 @@ import { theme } from "../../styles/Theme.styled";
 
 type MobileMenuPropsType = {
   items: Array<string>;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const MobileMenu = (props: MobileMenuPropsType) => {
   return (
     <StyledMobileMenu>
-      <BurgerButton isOpen={false}>
+      <BurgerButton
+        onClick={() => props.setIsOpen(!props.isOpen)}
+        isOpen={props.isOpen}
+      >
         <span></span>
       </BurgerButton>
 
-      <MobileMenuPopup isOpen={false}>
+      <MobileMenuPopup isOpen={props.isOpen}>
         <NavLinks items={props.items} />
         <Button as="a" title="Contact" />
       </MobileMenuPopup>
@@ -57,6 +62,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       position: absolute;
       transform: translateY(-10px);
       border-radius: 10px;
+      transition: transform 0.1s ease-in-out;
     }
 
     &::after {
@@ -68,6 +74,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       position: absolute;
       transform: translateY(10px);
       border-radius: 10px;
+      transition: transform 0.1s ease-in-out;
     }
 
     ${(props) =>

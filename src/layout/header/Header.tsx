@@ -13,11 +13,12 @@ type Props = {};
 const navItems = ["Home", "Projects"];
 
 export const Header = (props: Props) => {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <StyledHeader>
       <Container>
         <Menu items={navItems} />
-        <MobileMenu items={navItems} />
+        <MobileMenu items={navItems} isOpen={isOpen} setIsOpen={setIsOpen} />
       </Container>
     </StyledHeader>
   );

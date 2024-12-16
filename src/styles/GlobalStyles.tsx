@@ -17,6 +17,8 @@ export const GlobalStyles = createGlobalStyle`
         font-style: normal;
         color: ${theme.colors.font};
         background-color: ${theme.colors.colorBg};
+        max-width: 1440px;
+        margin: 0 auto;
         
 
         ul {
