@@ -30,4 +30,8 @@ const StyledTimeLine = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 880px) {
+    width: 80vw;
+  }
 `;

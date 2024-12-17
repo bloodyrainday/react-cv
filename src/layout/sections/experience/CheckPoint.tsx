@@ -76,6 +76,38 @@ const StyledCheckPoint = styled.div`
   &:nth-child(even) div::before {
     right: -0.5em;
   }
+
+  @media screen and (max-width: 880px) {
+    width: 100%;
+
+    &:nth-child(odd) {
+      transform: none;
+      padding-left: 0;
+      border: none;
+    }
+
+    &:nth-child(even) {
+      transform: none;
+      padding-right: 0;
+      border: none;
+    }
+
+    &:nth-child(odd)::before,
+    &:nth-child(even)::before {
+      width: 3px;
+      height: 4em;
+      top: -2em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:nth-child(odd) div::before,
+    &:nth-child(even) div::before {
+      top: -0.5em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 `;
 
 const Frame = styled.div`
