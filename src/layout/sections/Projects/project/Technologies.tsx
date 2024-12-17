@@ -19,6 +19,7 @@ export const Technologies = (props: TechnologiesPropsType) => {
 
 const StyledTechnologies = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   gap: 12px;
   margin-bottom: 19px;

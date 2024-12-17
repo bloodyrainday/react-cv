@@ -6,6 +6,7 @@ import { Button } from "../../../components/Button/Button";
 import { Project } from "./project/Project";
 import projectImage from "../../../assets/images/picture_2.png";
 import { Container } from "../../../components/Container";
+import { theme } from "../../../styles/Theme.styled";
 
 type Props = {};
 
@@ -15,7 +16,7 @@ export const Projects = (props: Props) => {
       <Container>
         <SectionTitle>Projects</SectionTitle>
 
-        <FlexWrapper justify="space-between">
+        <FlexWrapper justify="space-between" gap="27px">
           <Project
             title="TITLE PROJECT"
             src={projectImage}
@@ -56,5 +57,13 @@ const StyledProjects = styled.section`
     width: 305px;
     height: 56px;
     margin: 0 auto;
+  }
+
+  @media ${theme.media.tablet} {
+    ${FlexWrapper} {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
   }
 `;

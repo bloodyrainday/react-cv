@@ -24,8 +24,8 @@ export const Project = (props: ProjectPropsType) => {
 };
 
 const StyledProject = styled.article`
-  width: 522px;
-  height: 636px;
+  max-width: 522px;
+  width: 100%;
   background-color: #f5f2fd;
   border-radius: 6px;
   box-shadow: 2px 2px 32px 0px #28262c26;
@@ -37,6 +37,7 @@ const ProjectInfo = styled.div`
 
 const Image = styled.img`
   border-radius: 6px;
+  width: 100%;
 `;
 
 const Title = styled.h3`
