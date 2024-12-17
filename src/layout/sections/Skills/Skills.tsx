@@ -5,6 +5,7 @@ import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
 import { GridWrapper } from "../../../components/GridWrapper";
+import { theme } from "../../../styles/Theme.styled";
 
 type Props = {};
 
@@ -33,4 +34,17 @@ export const Skills = (props: Props) => {
 
 const StyledSkills = styled.section`
   margin-bottom: 140px;
+
+  ${SectionTitle} {
+    margin-bottom: 30px;
+  }
+
+  ${GridWrapper} {
+  }
+
+  @media ${theme.media.mobile} {
+    ${GridWrapper} {
+      gap: 48px;
+    }
+  }
 `;

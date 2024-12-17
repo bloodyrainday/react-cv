@@ -76,6 +76,20 @@ const StyledMain = styled.section`
       text-align: center;
     }
   }
+
+  @media ${theme.media.tablet} {
+    ${FlexWrapper} > svg {
+      width: 420px;
+      height: 330px;
+    }
+  }
+
+  @media ${theme.media.mobile} {
+    ${FlexWrapper} > svg {
+      width: 320px;
+      height: 230px;
+    }
+  }
 `;
 
 const Title = styled.h1`
