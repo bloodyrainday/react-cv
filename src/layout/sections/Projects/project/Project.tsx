@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Technologies } from "./Technologies";
+import { theme } from "../../../../styles/Theme.styled";
 
 type ProjectPropsType = {
   title: string;
@@ -33,6 +34,10 @@ const StyledProject = styled.article`
 
 const ProjectInfo = styled.div`
   padding: 29px 26px 31px 26px;
+
+  @media ${theme.media.mobile} {
+    padding: 16px 17px 20px 17px;
+  }
 `;
 
 const Image = styled.img`

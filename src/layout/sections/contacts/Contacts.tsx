@@ -29,6 +29,14 @@ export const Contacts = (props: Props) => {
 const StyledContacts = styled.section`
   margin-bottom: 190px;
 
+  @media ${theme.media.mobile} {
+    margin-bottom: 150px;
+  }
+
+  ${SectionTitle} {
+    margin-bottom: 28px;
+  }
+
   textarea {
     width: 100%;
     height: 165px;

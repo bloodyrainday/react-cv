@@ -11,9 +11,9 @@ export const About = (props: Props) => {
   return (
     <StyledAbout>
       <Container>
-        <SectionTitle>About me</SectionTitle>
-        <FlexWrapper align="center">
-          <StyledSpan />
+        <FlexWrapper align="start" direction="column" gap="20px">
+          {/* <StyledSpan /> */}
+          <SectionTitle>About me</SectionTitle>
           <Text>
             The long barrow was built on land previously inhabited in the
             Mesolithic period. It consisted of a sub-rectangular earthen
@@ -32,18 +32,36 @@ export const About = (props: Props) => {
 const StyledAbout = styled.section`
   margin-bottom: 140px;
 
+  @media ${theme.media.mobile} {
+    margin-bottom: 100px;
+  }
+
   h2 {
-    margin-bottom: 20px;
-    padding-left: 15px;
+  }
+
+  ${FlexWrapper} {
+    padding-left: 22px;
   }
 `;
 
 const Text = styled.p`
+  position: relative;
   max-width: 865px;
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
   letter-spacing: 0.04em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 116px;
+    background-color: ${theme.colors.primary};
+    border-radius: 2px;
+    left: -22px;
+    top: 5px;
+  }
 `;
 
 const StyledSpan = styled.span`

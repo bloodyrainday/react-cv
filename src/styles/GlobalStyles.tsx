@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
         color: ${theme.colors.font};
         background-color: ${theme.colors.colorBg};
         max-width: 1440px;
+        min-height: 414px;
         margin: 0 auto;
         
 

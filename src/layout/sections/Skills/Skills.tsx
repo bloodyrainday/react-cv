@@ -35,6 +35,10 @@ export const Skills = (props: Props) => {
 const StyledSkills = styled.section`
   margin-bottom: 140px;
 
+  @media ${theme.media.mobile} {
+    margin-bottom: 100px;
+  }
+
   ${SectionTitle} {
     margin-bottom: 30px;
   }

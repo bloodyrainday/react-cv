@@ -40,6 +40,10 @@ export const Projects = (props: Props) => {
 const StyledProjects = styled.section`
   margin-bottom: 140px;
 
+  @media ${theme.media.mobile} {
+    margin-bottom: 100px;
+  }
+
   ${SectionTitle} {
     margin-bottom: 30px;
   }
@@ -62,7 +66,6 @@ const StyledProjects = styled.section`
   @media ${theme.media.tablet} {
     ${FlexWrapper} {
       flex-direction: column;
-      gap: 16px;
       align-items: center;
     }
   }

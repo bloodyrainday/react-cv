@@ -29,7 +29,7 @@ const StyledCheckPoint = styled.div`
   &:nth-child(odd) {
     border-left: 5px solid ${theme.colors.primary};
     padding-left: 3em;
-    transform: translateX(198px);
+    transform: translateX(197px);
   }
 
   &:nth-child(even) {

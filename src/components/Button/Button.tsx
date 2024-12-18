@@ -19,13 +19,10 @@ const StyledButton = styled.button<ButtonPropsType>`
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.buttonText};
   border-radius: 6px;
-  padding-top: 12px;
-  padding-bottom: 13px;
+  padding: 12px 20px;
   font-size: 16px;
   line-height: 19.5px;
   border: none;
-  padding-left: 20px;
-  padding-right: 20px;
   cursor: pointer;
 
   &:hover {

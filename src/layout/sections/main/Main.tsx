@@ -53,6 +53,34 @@ const UserInfo = styled.div`
   }
 `;
 
+const ButtonArrow = styled.button`
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+  animation-name: animatedButtonArrow;
+
+  @keyframes animatedButtonArrow {
+    from {
+      transform: translateX(0);
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateX(0);
+      transform: translateY(10px);
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+`;
+
 const StyledMain = styled.section`
   display: flex;
   flex-direction: row;
@@ -60,7 +88,7 @@ const StyledMain = styled.section`
   align-items: center;
   gap: 0;
   padding-top: 15vh;
-  height: 100vh;
+  min-height: 100vh;
 
   @media screen and (max-width: 1050px) {
     ${FlexWrapper} {
@@ -70,17 +98,16 @@ const StyledMain = styled.section`
 
     ${FlexWrapper} > svg {
       margin-bottom: 70px;
+      width: 420px;
+      height: 330px;
     }
 
     ${UserInfo} {
       text-align: center;
     }
-  }
 
-  @media ${theme.media.tablet} {
-    ${FlexWrapper} > svg {
-      width: 420px;
-      height: 330px;
+    ${ButtonArrow} {
+      display: none;
     }
   }
 
@@ -121,34 +148,5 @@ const Text = styled.p`
 
   @media ${theme.media.mobile} {
     margin-bottom: 16px;
-  }
-`;
-
-const ButtonArrow = styled.button`
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate-reverse;
-
-  animation-name: animatedButtonArrow;
-
-  @keyframes animatedButtonArrow {
-    from {
-      transform: translateX(0);
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateX(0);
-      transform: translateY(10px);
-    }
-  }
-
-  &:hover {
-    animation-play-state: paused;
   }
 `;

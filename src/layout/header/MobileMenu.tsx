@@ -97,6 +97,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   display: none;
+
   ${(props) =>
     props.isOpen &&
     css`
