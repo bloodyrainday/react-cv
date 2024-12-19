@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { FlexWrapper } from "../../../components/FlexWrapper";
@@ -7,66 +6,45 @@ import { Project } from "./project/Project";
 import projectImage from "../../../assets/images/picture_2.png";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme.styled";
+import { S } from "./Projects_Styles";
 
 type Props = {};
 
+const projectData = [
+  {
+    title: "TITLE PROJECT",
+    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    technologies: ["Javascript", "PostgreSQL", "React", "Redux"],
+  },
+  {
+    title: "I N S I G H T G R A M",
+    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    technologies: ["Javascript", "React Native", "Redux"],
+  },
+];
+
 export const Projects = (props: Props) => {
   return (
-    <StyledProjects>
+    <S.Projects>
       <Container>
         <SectionTitle>Projects</SectionTitle>
 
         <FlexWrapper justify="space-between" gap="27px">
-          <Project
-            title="TITLE PROJECT"
-            src={projectImage}
-            technologies={["Javascript", "PostgreSQL", "React", "Redux"]}
-            text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-          />
-          <Project
-            title="I N S I G H T G R A M"
-            src={projectImage}
-            technologies={["Javascript", "React Native", "Redux"]}
-            text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-          />
+          {projectData.map((item, index) => {
+            return (
+              <Project
+                key={index}
+                title={item.title}
+                src={projectImage}
+                technologies={item.technologies}
+                text={item.text}
+              />
+            );
+          })}
         </FlexWrapper>
 
         <Button title="See all projects" />
       </Container>
-    </StyledProjects>
+    </S.Projects>
   );
 };
-
-const StyledProjects = styled.section`
-  margin-bottom: 140px;
-
-  @media ${theme.media.mobile} {
-    margin-bottom: 100px;
-  }
-
-  ${SectionTitle} {
-    margin-bottom: 30px;
-  }
-
-  ${FlexWrapper} {
-    margin-bottom: 35px;
-
-    & button {
-      opacity: 1;
-    }
-  }
-
-  ${FlexWrapper} ~ button {
-    display: block;
-    width: 305px;
-    height: 56px;
-    margin: 0 auto;
-  }
-
-  @media ${theme.media.tablet} {
-    ${FlexWrapper} {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-`;
