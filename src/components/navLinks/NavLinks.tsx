@@ -1,58 +1,25 @@
 import React from "react";
-import styled from "styled-components";
-import { theme } from "../../styles/Theme.styled";
-import Link from "../Link";
+import Link from "../link/Link";
+import { S } from "./NavLinks_Styles";
 
 type NavLinksPropsType = {
   items: Array<string>;
 };
 
-export const NavLinks = (props: NavLinksPropsType) => {
+export const NavLinks: React.FC<NavLinksPropsType> = (
+  props: NavLinksPropsType
+) => {
   return (
-    <StyledNavLinks>
-      <NavList>
+    <S.NavLinks>
+      <S.List>
         {props.items.map((item, index: number) => {
           return (
-            <NavItem key={index}>
+            <S.Item key={index}>
               <Link title={item} />
-            </NavItem>
+            </S.Item>
           );
         })}
-      </NavList>
-    </StyledNavLinks>
+      </S.List>
+    </S.NavLinks>
   );
 };
-
-const StyledNavLinks = styled.nav``;
-
-const NavList = styled.ul`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const NavItem = styled.li`
-  position: relative;
-`;
-
-// const NavLink = styled.a`
-//   color: ${theme.colors.font};
-
-//   &::before {
-//     content: "";
-//     display: inline-block;
-//     position: absolute;
-//     bottom: -10px;
-//     height: 8px;
-//     width: 100%;
-//     background-color: ${theme.colors.primary};
-//     border-radius: 4px;
-//     transform: scale(0);
-//   }
-
-//   &:hover {
-//     &::before {
-//       transform: scale(1);
-//       transition: transform 0.3s ease-in-out;
-//     }
-//   }
-// `;

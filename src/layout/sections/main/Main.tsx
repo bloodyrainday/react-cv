@@ -1,12 +1,12 @@
-import { Button } from "../../../components/Button/Button";
-import { Icon } from "../../../components/Icon/Icon";
+import { Button } from "../../../components/button/Button";
+import { Icon } from "../../../components/icon/Icon";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { S } from "./Main_Styles";
 
 type Props = {};
 
-export const Main = (props: Props) => {
+export const Main: React.FC = (props: Props) => {
   return (
     <S.Main>
       <Container>

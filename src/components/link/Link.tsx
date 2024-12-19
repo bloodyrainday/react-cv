@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../styles/Theme.styled";
+import { theme } from "../../styles/Theme.styled";
 
-type Props = {
+type LinkPropsType = {
   title: string;
 };
 
-const Link = (props: Props) => {
+const Link: React.FC<LinkPropsType> = (props: LinkPropsType) => {
   return <StyledLink href="#">{props.title}</StyledLink>;
 };
 

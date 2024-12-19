@@ -1,11 +1,9 @@
-import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { Button } from "../../../components/Button/Button";
+import { Button } from "../../../components/button/Button";
 import { Project } from "./project/Project";
 import projectImage from "../../../assets/images/picture_2.png";
 import { Container } from "../../../components/Container";
-import { theme } from "../../../styles/Theme.styled";
 import { S } from "./Projects_Styles";
 
 type Props = {};
@@ -23,7 +21,7 @@ const projectData = [
   },
 ];
 
-export const Projects = (props: Props) => {
+export const Projects: React.FC = (props: Props) => {
   return (
     <S.Projects>
       <Container>

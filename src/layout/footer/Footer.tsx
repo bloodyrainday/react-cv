@@ -1,109 +1,46 @@
-import React from "react";
-import styled from "styled-components";
-import SocialLink from "../../components/SocialLink";
+import SocialLink from "../../components/socialLink/SocialLink";
 import { Container } from "../../components/Container";
-import { theme } from "../../styles/Theme.styled";
-import Link from "../../components/Link";
+import { S } from "./Footer_Styles";
+import { NavLinks } from "../../components/navLinks/NavLinks";
 
 type Props = {};
 
-export const Footer = (props: Props) => {
+const socialsData = [
+  {
+    name: "GMAIL",
+    iconId: "gmailIcon",
+  },
+  {
+    name: "LINKEDIN",
+    iconId: "linkedinIcon",
+  },
+  {
+    name: "GITHUB",
+    iconId: "githubIcon",
+  },
+];
+
+const navLinks = ["Projects", "Contacts"];
+
+export const Footer: React.FC = (props: Props) => {
   return (
-    <StyledFooter>
+    <S.Footer>
       <Container>
-        <List>
-          <Item>
-            <SocialLink iconId="gmailIcon" />
-            <SocialName>GMAIL</SocialName>
-          </Item>
+        <S.List>
+          {socialsData.map((item, index) => {
+            return (
+              <S.Item key={index}>
+                <SocialLink iconId={item.iconId} />
+                <S.SocialName>{item.name}</S.SocialName>
+              </S.Item>
+            );
+          })}
+        </S.List>
 
-          <Item>
-            <SocialLink iconId="linkedinIcon" />
-            <SocialName>LINKEDIN</SocialName>
-          </Item>
+        <NavLinks items={navLinks} />
 
-          <Item>
-            <SocialLink iconId="githubIcon" />
-            <SocialName>GITHUB</SocialName>
-          </Item>
-        </List>
-
-        <NavContactList>
-          <NavContactItem>
-            <Link title="Projects" />
-          </NavContactItem>
-
-          <NavContactItem>
-            <Link title="Contacts" />
-          </NavContactItem>
-        </NavContactList>
-
-        <SmallText>FRONTEND DEVELOPER 2024</SmallText>
+        <S.SmallText>FRONTEND DEVELOPER 2024</S.SmallText>
       </Container>
-    </StyledFooter>
+    </S.Footer>
   );
 };
-
-const StyledFooter = styled.footer``;
-
-const List = styled.ul`
-  display: flex;
-  justify-content: center;
-  gap: 73px;
-`;
-
-const Item = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-`;
-
-const NavContactList = styled.ul`
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  margin-top: 50px;
-`;
-
-const NavContactItem = styled.li`
-  position: relative;
-
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    bottom: -10px;
-    height: 8px;
-    width: 100%;
-    background-color: ${theme.colors.primary};
-    border-radius: 4px;
-    transform: scale(0);
-  }
-
-  &:hover {
-    &::before {
-      transform: scale(1);
-      transition: transform 0.3s ease-in-out;
-    }
-  }
-`;
-
-const NavContactLink = styled.a``;
-
-const SmallText = styled.small`
-  display: block;
-  text-align: center;
-  margin-top: 49px;
-  font-size: 10px;
-  margin-bottom: 15px;
-`;
-
-const SocialName = styled.span`
-  color: ${theme.colors.font};
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 11.11px;
-  letter-spacing: 0.12em;
-  text-align: center;
-`;

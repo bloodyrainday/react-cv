@@ -5,7 +5,7 @@ import { S } from "./About_Styles";
 
 type Props = {};
 
-export const About = (props: Props) => {
+export const About: React.FC = (props: Props) => {
   return (
     <S.About>
       <Container>

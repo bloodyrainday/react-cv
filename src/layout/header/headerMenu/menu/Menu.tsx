@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../../../components/Button/Button";
+import { Button } from "../../../../components/button/Button";
 import { NavLinks } from "../../../../components/navLinks/NavLinks";
 
 const Menu: React.FC<{ items: Array<string> }> = (props: {

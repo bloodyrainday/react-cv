@@ -7,7 +7,7 @@ type ButtonPropsType = {
   type?: string;
 };
 
-export const Button = (props: ButtonPropsType) => {
+export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
   return (
     <StyledButton as={props.as} type={props.type}>
       {props.title}

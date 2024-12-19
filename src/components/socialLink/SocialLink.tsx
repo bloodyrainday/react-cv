@@ -1,13 +1,15 @@
 import React from "react";
-import { Icon } from "./Icon/Icon";
+import { Icon } from "../icon/Icon";
 import styled from "styled-components";
-import { theme } from "../styles/Theme.styled";
+import { theme } from "../../styles/Theme.styled";
 
 type SocialLinkPropsType = {
   iconId: string;
 };
 
-const SocialLink = (props: SocialLinkPropsType) => {
+const SocialLink: React.FC<SocialLinkPropsType> = (
+  props: SocialLinkPropsType
+) => {
   return (
     <StyledSocialLink>
       <Icon

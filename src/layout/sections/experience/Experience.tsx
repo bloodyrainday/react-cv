@@ -1,8 +1,7 @@
-import React from "react";
-import styled from "styled-components";
 import { Container } from "../../../components/Container";
 import TimeLine from "./TimeLine";
 import { SectionTitle } from "../../../components/SectionTitle";
+import { S } from "./Experience_Styles";
 
 type Props = {};
 
@@ -29,17 +28,15 @@ const experience = [
   },
 ];
 
-const Experience = (props: Props) => {
+const Experience: React.FC = (props: Props) => {
   return (
-    <StyledExperience>
+    <S.Experience>
       <Container>
         <SectionTitle>Experience</SectionTitle>
         <TimeLine experience={experience} />
       </Container>
-    </StyledExperience>
+    </S.Experience>
   );
 };
 
 export default Experience;
-
-const StyledExperience = styled.section``;

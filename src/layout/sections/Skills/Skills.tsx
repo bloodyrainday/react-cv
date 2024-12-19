@@ -1,17 +1,41 @@
-import React from "react";
-import styled from "styled-components";
-import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
 import { GridWrapper } from "../../../components/GridWrapper";
-import { theme } from "../../../styles/Theme.styled";
+import { S } from "./Skills_Styles";
 
 type Props = {};
 
-export const Skills = (props: Props) => {
+const skillData = [
+  {
+    title: "JAVASCRIPT",
+    iconId: "jsIcon",
+  },
+  {
+    title: "TYPESCRIPT",
+    iconId: "tsIcon",
+  },
+  {
+    title: "REACT",
+    iconId: "reactIcon",
+  },
+  {
+    title: "REDUX",
+    iconId: "reduxIcon",
+  },
+  {
+    title: "STYLED COMPONENTS",
+    iconId: "scIcon",
+  },
+  {
+    title: "GIT",
+    iconId: "gitIcon",
+  },
+];
+
+export const Skills: React.FC = (props: Props) => {
   return (
-    <StyledSkills>
+    <S.Skills>
       <Container>
         <SectionTitle>Skills</SectionTitle>
 
@@ -20,35 +44,11 @@ export const Skills = (props: Props) => {
           gridTemplateColumns="1fr 1fr 1fr"
           justify="center"
         >
-          <Skill title="JAVASCRIPT" iconId="jsIcon"></Skill>
-          <Skill title="TYPESCRIPT" iconId="tsIcon"></Skill>
-          <Skill title="REACT" iconId="reactIcon"></Skill>
-          <Skill title="REDUX" iconId="reduxIcon"></Skill>
-          <Skill title="STYLED COMPONENTS" iconId="scIcon"></Skill>
-          <Skill title="GIT" iconId="gitIcon"></Skill>
+          {skillData.map((item, index) => {
+            return <Skill title={item.title} iconId={item.iconId}></Skill>;
+          })}
         </GridWrapper>
       </Container>
-    </StyledSkills>
+    </S.Skills>
   );
 };
-
-const StyledSkills = styled.section`
-  margin-bottom: 140px;
-
-  @media ${theme.media.mobile} {
-    margin-bottom: 100px;
-  }
-
-  ${SectionTitle} {
-    margin-bottom: 30px;
-  }
-
-  ${GridWrapper} {
-  }
-
-  @media ${theme.media.mobile} {
-    ${GridWrapper} {
-      gap: 48px;
-    }
-  }
-`;
