@@ -55,7 +55,7 @@ const UserInfo = styled.div`
 
 const ButtonArrow = styled.button`
   position: absolute;
-  bottom: 80px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   animation-duration: 0.5s;

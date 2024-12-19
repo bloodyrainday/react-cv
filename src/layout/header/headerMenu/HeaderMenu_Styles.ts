@@ -1,44 +1,21 @@
-import React from "react";
-import { Button } from "../../components/Button/Button";
-import { NavLinks } from "../../components/navLinks/NavLinks";
-import { FlexWrapper } from "../../components/FlexWrapper";
 import styled, { css } from "styled-components";
-import { theme } from "../../styles/Theme.styled";
+import { GridWrapper } from "../../../components/GridWrapper";
+import { theme } from "../../../styles/Theme.styled";
 
-type MobileMenuPropsType = {
-  items: Array<string>;
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+// Desktop Menu
 
-const MobileMenu = (props: MobileMenuPropsType) => {
-  return (
-    <StyledMobileMenu>
-      <BurgerButton
-        onClick={() => props.setIsOpen(!props.isOpen)}
-        isOpen={props.isOpen}
-      >
-        <span></span>
-      </BurgerButton>
-
-      <MobileMenuPopup isOpen={props.isOpen}>
-        <NavLinks items={props.items} />
-        <Button as="a" title="Contact" />
-      </MobileMenuPopup>
-    </StyledMobileMenu>
-  );
-};
-
-export default MobileMenu;
-
-const StyledMobileMenu = styled.div`
-  display: none;
-
-  @media ${theme.media.tablet} {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
+const DesktopMenu = styled.div`
+  ${GridWrapper} > button {
+    width: 105px;
   }
+`;
+
+// Mobile Menu
+
+const MobileMenu = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
@@ -122,3 +99,10 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
       }
     `}
 `;
+
+export const S = {
+  DesktopMenu,
+  MobileMenu,
+  BurgerButton,
+  MobileMenuPopup,
+};

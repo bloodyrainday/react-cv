@@ -1,36 +1,33 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLinks } from "../../components/navLinks/NavLinks";
-import { Button } from "../../components/Button/Button";
+import React, { useState } from "react";
 import { Container } from "../../components/Container";
-import { GridWrapper } from "../../components/GridWrapper";
-import { theme } from "../../styles/Theme.styled";
-import MobileMenu from "./MobileMenu";
-import Menu from "./Menu";
+import MobileMenu from "./headerMenu/mobileMenu/MobileMenu";
+import DesktopMenu from "./headerMenu/desktopMenu/DesktopMenu";
+import { S } from "./Header_Styles";
 
 type Props = {};
 
 const navItems = ["Home", "Projects"];
 
-export const Header = (props: Props) => {
+export const Header: React.FC = (props: Props) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 768;
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
   return (
-    <StyledHeader>
+    <S.Header>
       <Container>
-        <Menu items={navItems} />
-        <MobileMenu items={navItems} isOpen={isOpen} setIsOpen={setIsOpen} />
+        {width > breakpoint ? (
+          <DesktopMenu items={navItems} />
+        ) : (
+          <MobileMenu items={navItems} isOpen={isOpen} setIsOpen={setIsOpen} />
+        )}
       </Container>
-    </StyledHeader>
+    </S.Header>
   );
 };
-
-const StyledHeader = styled.header`
-  padding: 27px 0 28px 0;
-  background-color: ${theme.colors.colorBg};
-  opacity: 0.9;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-`;
