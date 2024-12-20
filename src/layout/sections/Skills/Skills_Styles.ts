@@ -26,6 +26,7 @@ const Skills = styled.section`
 `;
 
 const Skill = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

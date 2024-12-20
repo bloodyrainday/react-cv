@@ -106,6 +106,7 @@ const CheckPoint = styled.div`
 `;
 
 const Frame = styled.div`
+  position: relative;
   border: 2px solid ${theme.colors.primary};
   border-radius: 1em;
   padding: 1.5em;

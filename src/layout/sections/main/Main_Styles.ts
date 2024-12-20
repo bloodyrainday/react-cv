@@ -40,6 +40,7 @@ const ButtonArrow = styled.button`
 `;
 
 const Main = styled.section`
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

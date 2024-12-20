@@ -32,6 +32,7 @@ const Form = styled.form`
 `;
 
 const Field = styled.input`
+  position: relative;
   width: 100%;
   border-radius: 6px;
   border: 1px solid #534084;

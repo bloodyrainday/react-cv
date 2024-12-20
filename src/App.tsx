@@ -1,3 +1,4 @@
+import { Particle } from "./components/particle/Particle";
 import { Footer } from "./layout/footer/Footer";
 import { Header } from "./layout/header/Header";
 import { About } from "./layout/sections/about/About";
@@ -10,6 +11,8 @@ import { Skills } from "./layout/sections/Skills/Skills";
 function App() {
   return (
     <div className="App">
+      <Particle />
+
       <Header />
       <Main />
       <About />

@@ -9,7 +9,6 @@ type Props = {};
 const navItems = ["Home", "Projects"];
 
 export const Header: React.FC = (props: Props) => {
-  const [isOpen, setIsOpen] = React.useState(false);
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 768;
 
@@ -25,7 +24,7 @@ export const Header: React.FC = (props: Props) => {
         {width > breakpoint ? (
           <DesktopMenu items={navItems} />
         ) : (
-          <MobileMenu items={navItems} isOpen={isOpen} setIsOpen={setIsOpen} />
+          <MobileMenu items={navItems} />
         )}
       </Container>
     </S.Header>

@@ -38,6 +38,7 @@ const Projects = styled.section`
 `;
 
 const Project = styled.article`
+  position: relative;
   max-width: 522px;
   width: 100%;
   background-color: #f5f2fd;
