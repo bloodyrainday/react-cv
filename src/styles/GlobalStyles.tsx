@@ -1,5 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
-import { theme } from "./Theme.styled";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     *,
@@ -15,11 +14,6 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Montserrat", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
-        color: ${theme.colors.font};
-        background-color: ${theme.colors.colorBg};
-        max-width: 1440px;
-        min-height: 414px;
-        margin: 0 auto;
         
 
         ul {

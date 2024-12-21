@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { font } from "../../../styles/Common";
-import { theme } from "../../../styles/Theme.styled";
 import { Link } from "react-scroll";
 
 const UserInfo = styled.div`
@@ -23,6 +22,10 @@ const ButtonArrow = styled(Link)`
   animation-direction: alternate-reverse;
   animation-name: animatedButtonArrow;
 
+  svg {
+    color: ${(props) => props.theme.colors.primary};
+  }
+
   @keyframes animatedButtonArrow {
     from {
       transform: translateX(0);
@@ -41,7 +44,8 @@ const ButtonArrow = styled(Link)`
 `;
 
 const Main = styled.section`
-  position: relative;
+  background-color: ${(props) => props.theme.colors.colorBg};
+  color: ${(props) => props.theme.colors.font};
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -71,7 +75,7 @@ const Main = styled.section`
     }
   }
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     ${FlexWrapper} > svg {
       width: 320px;
       height: 230px;
@@ -84,17 +88,19 @@ const Title = styled.h1`
   line-height: 23px;
   margin-bottom: 10px;
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 12px;
   }
 `;
 
 const Name = styled.span`
-  ${font({ weight: 600, color: `${theme.colors.primary}`, Fmax: 72, Fmin: 40 })}
+  ${font({ weight: 600, Fmax: 72, Fmin: 40 })}
   margin-bottom: 11px;
   white-space: nowrap;
 
-  @media ${theme.media.mobile} {
+  color: ${(props) => props.theme.colors.primary};
+
+  @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 16px;
   }
 `;
@@ -106,7 +112,7 @@ const Text = styled.p`
   letter-spacing: 0.04em;
   margin-bottom: 30px;
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 16px;
   }
 `;

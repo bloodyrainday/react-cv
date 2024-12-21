@@ -3,10 +3,11 @@ import { Icon } from "../../../components/icon/Icon";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { S } from "./Main_Styles";
+import { ThemeConsumer } from "styled-components";
 
-type Props = {};
-
-export const Main: React.FC = (props: Props) => {
+export const Main: React.FC<{ isDarkTheme: boolean }> = (props: {
+  isDarkTheme: boolean;
+}) => {
   return (
     <S.Main id="home">
       <Container>
@@ -23,7 +24,7 @@ export const Main: React.FC = (props: Props) => {
           </S.UserInfo>
 
           <Icon
-            iconId="mainPicture"
+            iconId={props.isDarkTheme ? "darkMainPicture" : "mainPicture"}
             width="577"
             height="433"
             viewBox="0 0 577 433"

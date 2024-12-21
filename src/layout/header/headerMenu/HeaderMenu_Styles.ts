@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { GridWrapper } from "../../../components/GridWrapper";
-import { theme } from "../../../styles/Theme.styled";
 
 // Desktop Menu
 
@@ -27,7 +26,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: absolute;
     width: 50px;
     height: 4px;
-    background-color: ${theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.primary};
     border-radius: 10px;
 
     &::before {
@@ -35,7 +34,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       display: block;
       width: 50px;
       height: 4px;
-      background-color: ${theme.colors.primary};
+      background-color: ${(props) => props.theme.colors.primary};
       position: absolute;
       transform: translateY(-10px);
       border-radius: 10px;
@@ -47,7 +46,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       display: block;
       width: 50px;
       height: 4px;
-      background-color: ${theme.colors.primary};
+      background-color: ${(props) => props.theme.colors.primary};
       position: absolute;
       transform: translateY(10px);
       border-radius: 10px;
@@ -73,30 +72,32 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 `;
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  background-color: ${(props) => props.theme.colors.colorBg};
+  transform: translateX(-100%);
+  transition: 0.2s ease-in-out;
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
 
   ${(props) =>
     props.isOpen &&
     css`
-      display: flex;
-      flex-direction: column;
-      gap: 80px;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      z-index: 999;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 1);
-
-      ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 80px;
-      }
+      transform: translateX(0);
     `}
 `;
 

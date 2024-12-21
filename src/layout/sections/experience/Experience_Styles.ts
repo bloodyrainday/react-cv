@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import { theme } from "../../../styles/Theme.styled";
 
-const Experience = styled.section``;
+const Experience = styled.section`
+  background-color: ${(props) => props.theme.colors.colorBg};
+  color: ${(props) => props.theme.colors.font};
+`;
 
 const TimeLine = styled.div`
   margin: 5em auto;
@@ -22,13 +24,13 @@ const CheckPoint = styled.div`
   position: relative;
 
   &:nth-child(odd) {
-    border-left: 5px solid ${theme.colors.primary};
+    border-left: 5px solid ${(props) => props.theme.colors.primary};
     padding-left: 3em;
     transform: translateX(197px);
   }
 
   &:nth-child(even) {
-    border-right: 5px solid ${theme.colors.primary};
+    border-right: 5px solid ${(props) => props.theme.colors.primary};
     padding-right: 3em;
     transform: translateX(-198px);
   }
@@ -36,7 +38,7 @@ const CheckPoint = styled.div`
   &:nth-child(odd)::before,
   &:nth-child(even)::before {
     content: "";
-    background-color: ${theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.primary};
     width: 3em;
     height: 3px;
     position: absolute;
@@ -55,7 +57,7 @@ const CheckPoint = styled.div`
   &:nth-child(odd) div::before,
   &:nth-child(even) div::before {
     content: "";
-    background-color: ${theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.primary};
     width: 0.8em;
     height: 0.8em;
     position: absolute;
@@ -107,7 +109,7 @@ const CheckPoint = styled.div`
 
 const Frame = styled.div`
   position: relative;
-  border: 2px solid ${theme.colors.primary};
+  border: 2px solid ${(props) => props.theme.colors.primary};
   border-radius: 1em;
   padding: 1.5em;
 `;

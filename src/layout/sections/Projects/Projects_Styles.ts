@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
-import { theme } from "../../../styles/Theme.styled";
 
 const Projects = styled.section`
+  background-color: ${(props) => props.theme.colors.colorBg};
+  color: ${(props) => props.theme.colors.font};
   margin-bottom: 140px;
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 100px;
   }
 
@@ -29,7 +30,7 @@ const Projects = styled.section`
     margin: 0 auto;
   }
 
-  @media ${theme.media.tablet} {
+  @media ${(props) => props.theme.media.tablet} {
     ${FlexWrapper} {
       flex-direction: column;
       align-items: center;
@@ -41,7 +42,7 @@ const Project = styled.article`
   position: relative;
   max-width: 522px;
   width: 100%;
-  background-color: #f5f2fd;
+  background-color: ${(props) => props.theme.colors.projectBg};
   border-radius: 6px;
   box-shadow: 2px 2px 32px 0px #28262c26;
 `;
@@ -49,7 +50,7 @@ const Project = styled.article`
 const ProjectInfo = styled.div`
   padding: 29px 26px 31px 26px;
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     padding: 16px 17px 20px 17px;
   }
 `;

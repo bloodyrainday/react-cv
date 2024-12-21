@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
-//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
-import { theme } from "../../styles/Theme.styled";
+import { loadSlim } from "tsparticles-slim";
 
-export const Particle = () => {
+export const Particle: React.FC<{ isDarkTheme: boolean }> = (props: {
+  isDarkTheme: boolean;
+}) => {
   const particlesInit = useCallback(async (engine: Engine) => {
     console.log(engine);
     await loadSlim(engine);
@@ -53,10 +53,10 @@ export const Particle = () => {
         },
         particles: {
           color: {
-            value: `${theme.colors.primary}`,
+            value: `${props.isDarkTheme ? "rgba(0, 245, 160, 1)" : "#5222D0"}`,
           },
           links: {
-            color: `${theme.colors.primary}`,
+            color: `${props.isDarkTheme ? "rgba(0, 245, 160, 1)" : "#5222D0"}`,
             distance: 200,
             enable: true,
             opacity: 0.5,

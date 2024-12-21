@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../styles/Theme.styled";
 
 const Footer = styled.footer`
   & nav ul {
@@ -27,11 +26,12 @@ const SmallText = styled.small`
   text-align: center;
   margin-top: 49px;
   font-size: 10px;
-  margin-bottom: 15px;
+  padding-bottom: 15px;
+  color: ${(props) => props.theme.colors.font};
 `;
 
 const SocialName = styled.span`
-  color: ${theme.colors.font};
+  color: ${(props) => props.theme.colors.font};
   font-size: 12px;
   font-weight: 400;
   line-height: 11.11px;

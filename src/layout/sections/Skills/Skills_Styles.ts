@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { GridWrapper } from "../../../components/GridWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
-import { theme } from "../../../styles/Theme.styled";
 import { font } from "../../../styles/Common";
 
 const Skills = styled.section`
+  background-color: ${(props) => props.theme.colors.colorBg};
+  color: ${(props) => props.theme.colors.font};
   margin-bottom: 140px;
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 100px;
   }
 
@@ -18,7 +19,7 @@ const Skills = styled.section`
   ${GridWrapper} {
   }
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     ${GridWrapper} {
       gap: 48px;
     }
@@ -32,7 +33,7 @@ const Skill = styled.div`
   align-items: center;
   gap: 20px;
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     gap: 15px;
     & > svg {
       width: 88px;

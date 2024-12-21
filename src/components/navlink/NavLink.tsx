@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/Theme.styled";
 import { animateScroll, Link } from "react-scroll";
 
 type LinkPropsType = {
@@ -15,6 +14,18 @@ const moveToTheTop = (href: string) => {
 };
 
 const NavLink: React.FC<LinkPropsType> = (props: LinkPropsType) => {
+  const [isOnTop, setIsOnTop] = React.useState(false);
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY < 200) {
+        setIsOnTop(true);
+      } else {
+        setIsOnTop(false);
+      }
+    });
+  }, []);
+
   return (
     <StyledLink
       onClick={moveToTheTop(props.href)}
@@ -32,7 +43,7 @@ const NavLink: React.FC<LinkPropsType> = (props: LinkPropsType) => {
 export default NavLink;
 
 const StyledLink = styled(Link)`
-  color: ${theme.colors.font};
+  color: ${(props) => props.theme.colors.font};
 
   &::before {
     content: "";
@@ -41,7 +52,7 @@ const StyledLink = styled(Link)`
     bottom: -10px;
     height: 8px;
     width: 100%;
-    background-color: ${theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.primary};
     border-radius: 4px;
     transform: scale(0);
   }

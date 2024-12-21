@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { theme } from "../../styles/Theme.styled";
 
 const Header = styled.header`
   padding: 27px 0 28px 0;
-  background-color: ${theme.colors.colorBg};
+  background-color: ${(props) => props.theme.colors.colorBg};
   opacity: 0.9;
   position: fixed;
   top: 0;

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { theme } from "../../../styles/Theme.styled";
 
 const About = styled.section`
+  background-color: ${(props) => props.theme.colors.colorBg};
+  color: ${(props) => props.theme.colors.font};
   margin-bottom: 140px;
 
-  @media ${theme.media.mobile} {
+  @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 100px;
   }
 
@@ -30,7 +31,7 @@ const Text = styled.p`
     position: absolute;
     width: 5px;
     height: 116px;
-    background-color: ${theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.primary};
     border-radius: 2px;
     left: -22px;
     top: 5px;

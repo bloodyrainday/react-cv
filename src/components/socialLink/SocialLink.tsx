@@ -1,7 +1,6 @@
 import React from "react";
 import { Icon } from "../icon/Icon";
 import styled from "styled-components";
-import { theme } from "../../styles/Theme.styled";
 
 type SocialLinkPropsType = {
   iconId: string;
@@ -26,23 +25,23 @@ export default SocialLink;
 
 const StyledSocialLink = styled.a`
   text-align: center;
-  background-color: ${theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   border-radius: 50%;
   display: inline-block;
   width: 38px;
   height: 38px;
 
   svg {
-    color: ${theme.colors.icon};
+    color: ${(props) => props.theme.colors.icon};
   }
 
   &:hover {
-    background-color: ${theme.colors.icon};
+    background-color: ${(props) => props.theme.colors.icon};
     transition: background-color 0.3s ease-in;
-    outline: 2px solid ${theme.colors.primary};
+    outline: 2px solid ${(props) => props.theme.colors.primary};
 
     svg {
-      color: ${theme.colors.primary};
+      color: ${(props) => props.theme.colors.primary};
     }
   }
 `;
