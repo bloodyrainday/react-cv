@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { font } from "../../../styles/Common";
 import { theme } from "../../../styles/Theme.styled";
+import { Link } from "react-scroll";
 
 const UserInfo = styled.div`
   max-width: 520px;
@@ -11,7 +12,7 @@ const UserInfo = styled.div`
   }
 `;
 
-const ButtonArrow = styled.button`
+const ButtonArrow = styled(Link)`
   position: absolute;
   bottom: 50px;
   left: 50%;

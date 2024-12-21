@@ -7,7 +7,7 @@ type Props = {};
 
 export const About: React.FC = (props: Props) => {
   return (
-    <S.About>
+    <S.About id="about">
       <Container>
         <FlexWrapper align="start" direction="column" gap="20px">
           <SectionTitle>About me</SectionTitle>

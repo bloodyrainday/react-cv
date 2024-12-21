@@ -5,11 +5,12 @@ type ButtonPropsType = {
   title: string;
   as?: React.ElementType | keyof JSX.IntrinsicElements;
   type?: string;
+  to?: string;
 };
 
 export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
   return (
-    <StyledButton as={props.as} type={props.type}>
+    <StyledButton as={props.as} type={props.type} to={props.to} smooth={true}>
       {props.title}
     </StyledButton>
   );

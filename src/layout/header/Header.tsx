@@ -6,8 +6,6 @@ import { S } from "./Header_Styles";
 
 type Props = {};
 
-const navItems = ["Home", "Projects"];
-
 export const Header: React.FC = (props: Props) => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 768;
@@ -21,11 +19,7 @@ export const Header: React.FC = (props: Props) => {
   return (
     <S.Header>
       <Container>
-        {width > breakpoint ? (
-          <DesktopMenu items={navItems} />
-        ) : (
-          <MobileMenu items={navItems} />
-        )}
+        {width > breakpoint ? <DesktopMenu /> : <MobileMenu />}
       </Container>
     </S.Header>
   );

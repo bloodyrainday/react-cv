@@ -3,7 +3,6 @@ import Menu from "../menu/Menu";
 import { S } from "../HeaderMenu_Styles";
 
 type MobileMenuPropsType = {
-  items: Array<string>;
   isOpen?: boolean;
   setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -26,7 +25,7 @@ const MobileMenu: React.FC<MobileMenuPropsType> = (
         isOpen={menuIsOpen}
         onClick={() => setMenuIsOpen(false)}
       >
-        <Menu items={props.items} />
+        <Menu />
       </S.MobileMenuPopup>
     </S.MobileMenu>
   );

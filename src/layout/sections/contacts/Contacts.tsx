@@ -8,7 +8,7 @@ type Props = {};
 
 export const Contacts: React.FC = (props: Props) => {
   return (
-    <S.Contacts>
+    <S.Contacts id="contacts">
       <Container>
         <SectionTitle>Contacts</SectionTitle>
 

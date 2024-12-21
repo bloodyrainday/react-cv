@@ -8,7 +8,7 @@ type Props = {};
 
 export const Main: React.FC = (props: Props) => {
   return (
-    <S.Main>
+    <S.Main id="home">
       <Container>
         <FlexWrapper justify="space-between" align="center">
           <S.UserInfo>
@@ -29,7 +29,7 @@ export const Main: React.FC = (props: Props) => {
             viewBox="0 0 577 433"
           />
         </FlexWrapper>
-        <S.ButtonArrow>
+        <S.ButtonArrow to="about" smooth={true} offset={-120}>
           <Icon
             iconId="arrowScrollIcon"
             width="32"

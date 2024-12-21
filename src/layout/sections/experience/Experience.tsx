@@ -30,7 +30,7 @@ const experience = [
 
 const Experience: React.FC = (props: Props) => {
   return (
-    <S.Experience>
+    <S.Experience id="experience">
       <Container>
         <SectionTitle>Experience</SectionTitle>
         <TimeLine experience={experience} />

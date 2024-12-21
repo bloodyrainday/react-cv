@@ -20,8 +20,6 @@ const socialsData = [
   },
 ];
 
-const navLinks = ["Projects", "Contacts"];
-
 export const Footer: React.FC = (props: Props) => {
   return (
     <S.Footer>
@@ -36,8 +34,6 @@ export const Footer: React.FC = (props: Props) => {
             );
           })}
         </S.List>
-
-        <NavLinks items={navLinks} />
 
         <S.SmallText>FRONTEND DEVELOPER 2024</S.SmallText>
       </Container>

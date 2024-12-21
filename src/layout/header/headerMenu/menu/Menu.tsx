@@ -1,14 +1,13 @@
 import React from "react";
 import { Button } from "../../../../components/button/Button";
 import { NavLinks } from "../../../../components/navLinks/NavLinks";
+import { Link } from "react-scroll";
 
-const Menu: React.FC<{ items: Array<string> }> = (props: {
-  items: Array<string>;
-}) => {
+const Menu: React.FC = (props) => {
   return (
     <>
-      <NavLinks items={props.items} />
-      <Button as="a" title="Contact" />
+      <NavLinks />
+      <Button as={Link} to="contacts" title="Contact" />
     </>
   );
 };

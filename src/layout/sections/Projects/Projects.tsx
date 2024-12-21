@@ -23,7 +23,7 @@ const projectData = [
 
 export const Projects: React.FC = (props: Props) => {
   return (
-    <S.Projects>
+    <S.Projects id="projects">
       <Container>
         <SectionTitle>Projects</SectionTitle>
 

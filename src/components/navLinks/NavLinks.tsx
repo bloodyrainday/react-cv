@@ -1,21 +1,26 @@
 import React from "react";
-import Link from "../link/Link";
+import NavLink from "../navlink/NavLink";
 import { S } from "./NavLinks_Styles";
 
-type NavLinksPropsType = {
-  items: Array<string>;
-};
+export const NavLinks: React.FC = (props) => {
+  const navItems = [
+    {
+      name: "Home",
+      href: "home",
+    },
+    {
+      name: "Projects",
+      href: "projects",
+    },
+  ];
 
-export const NavLinks: React.FC<NavLinksPropsType> = (
-  props: NavLinksPropsType
-) => {
   return (
     <S.NavLinks>
       <S.List>
-        {props.items.map((item, index: number) => {
+        {navItems.map((item, index: number) => {
           return (
             <S.Item key={index}>
-              <Link title={item} />
+              <NavLink name={item.name} href={item.href} />
             </S.Item>
           );
         })}
