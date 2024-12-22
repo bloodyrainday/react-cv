@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import { darkTheme, lightTheme } from "../../styles/Theme.styled";
 
 export const Particle: React.FC<{ isDarkTheme: boolean }> = (props: {
   isDarkTheme: boolean;
@@ -53,10 +54,18 @@ export const Particle: React.FC<{ isDarkTheme: boolean }> = (props: {
         },
         particles: {
           color: {
-            value: `${props.isDarkTheme ? "rgba(0, 245, 160, 1)" : "#5222D0"}`,
+            value: `${
+              props.isDarkTheme
+                ? darkTheme.colors.primary
+                : lightTheme.colors.primary
+            }`,
           },
           links: {
-            color: `${props.isDarkTheme ? "rgba(0, 245, 160, 1)" : "#5222D0"}`,
+            color: `${
+              props.isDarkTheme
+                ? darkTheme.colors.primary
+                : lightTheme.colors.primary
+            }`,
             distance: 200,
             enable: true,
             opacity: 0.5,
