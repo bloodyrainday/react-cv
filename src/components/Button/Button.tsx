@@ -6,11 +6,18 @@ type ButtonPropsType = {
   as?: React.ElementType | keyof JSX.IntrinsicElements;
   type?: string;
   to?: string;
+  clickToShowAll?: () => void;
 };
 
 export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
   return (
-    <StyledButton as={props.as} type={props.type} to={props.to} smooth={true}>
+    <StyledButton
+      as={props.as}
+      type={props.type}
+      to={props.to}
+      smooth={true}
+      onClick={props.clickToShowAll}
+    >
       {props.title}
     </StyledButton>
   );

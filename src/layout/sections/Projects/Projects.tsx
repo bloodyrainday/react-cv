@@ -5,8 +5,13 @@ import { Project } from "./project/Project";
 import projectImage from "../../../assets/images/picture_2.png";
 import { Container } from "../../../components/Container";
 import { S } from "./Projects_Styles";
+import React from "react";
 
-type Props = {};
+type projectDataPropsType = {
+  title: string;
+  text: string;
+  technologies: string[];
+};
 
 const projectData = [
   {
@@ -19,29 +24,57 @@ const projectData = [
     text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     technologies: ["Javascript", "React Native", "Redux"],
   },
+
+  {
+    title: "TITLE PROJECT",
+    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    technologies: ["Javascript", "PostgreSQL", "React", "Redux"],
+  },
+  {
+    title: "I N S I G H T G R A M",
+    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    technologies: ["Javascript", "React Native", "Redux"],
+  },
 ];
 
-export const Projects: React.FC = (props: Props) => {
+export const Projects: React.FC = (props) => {
+  const [data, setData] = React.useState<Array<projectDataPropsType>>();
+  const [isShownAll, setIsShownAll] = React.useState<boolean>(false);
+
+  const clickToShowAll = () => {
+    setIsShownAll(true);
+  };
+
+  React.useEffect(() => {
+    setData(projectData.slice(0, 2));
+
+    if (isShownAll) {
+      setData(projectData);
+    }
+  }, [isShownAll]);
   return (
     <S.Projects id="projects">
       <Container>
         <SectionTitle>Projects</SectionTitle>
 
-        <FlexWrapper justify="space-between" gap="27px">
-          {projectData.map((item, index) => {
-            return (
-              <Project
-                key={index}
-                title={item.title}
-                src={projectImage}
-                technologies={item.technologies}
-                text={item.text}
-              />
-            );
-          })}
+        <FlexWrapper justify="space-between" gap="27px" wrap="wrap">
+          {data &&
+            data.map((item, index) => {
+              return (
+                <Project
+                  key={index}
+                  title={item.title}
+                  src={projectImage}
+                  technologies={item.technologies}
+                  text={item.text}
+                />
+              );
+            })}
         </FlexWrapper>
 
-        <Button title="See all projects" />
+        {isShownAll || (
+          <Button title="See all projects" clickToShowAll={clickToShowAll} />
+        )}
       </Container>
     </S.Projects>
   );
