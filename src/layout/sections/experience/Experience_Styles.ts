@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-const Experience = styled.section`
-  background-color: ${(props) => props.theme.colors.colorBg};
-  color: ${(props) => props.theme.colors.font};
-`;
+const Experience = styled.section``;
 
 const TimeLine = styled.div`
   margin: 5em auto;

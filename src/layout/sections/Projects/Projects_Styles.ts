@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
+import { GridWrapper } from "../../../components/GridWrapper";
 
 const Projects = styled.section`
-  background-color: ${(props) => props.theme.colors.colorBg};
-  color: ${(props) => props.theme.colors.font};
   margin-bottom: 140px;
+
+  @media ${(props) => props.theme.media.tablet} {
+    ${GridWrapper} {
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
+  }
 
   @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 100px;
@@ -15,7 +21,7 @@ const Projects = styled.section`
     margin-bottom: 30px;
   }
 
-  ${FlexWrapper} {
+  ${GridWrapper} {
     margin-bottom: 35px;
 
     & button {
@@ -23,18 +29,11 @@ const Projects = styled.section`
     }
   }
 
-  ${FlexWrapper} ~ button {
+  ${GridWrapper} ~ button {
     display: block;
     width: 305px;
     height: 56px;
     margin: 0 auto;
-  }
-
-  @media ${(props) => props.theme.media.tablet} {
-    ${FlexWrapper} {
-      flex-direction: column;
-      align-items: center;
-    }
   }
 `;
 

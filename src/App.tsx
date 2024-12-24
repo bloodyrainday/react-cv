@@ -27,6 +27,7 @@ function App() {
         backgroundColor: isDarkTheme
           ? darkTheme.colors.colorBg
           : lightTheme.colors.colorBg,
+        color: isDarkTheme ? darkTheme.colors.font : lightTheme.colors.font,
       }}
     >
       <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>

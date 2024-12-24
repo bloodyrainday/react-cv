@@ -4,8 +4,6 @@ import { SectionTitle } from "../../../components/SectionTitle";
 import { font } from "../../../styles/Common";
 
 const Skills = styled.section`
-  background-color: ${(props) => props.theme.colors.colorBg};
-  color: ${(props) => props.theme.colors.font};
   margin-bottom: 140px;
 
   @media ${(props) => props.theme.media.mobile} {

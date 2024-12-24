@@ -7,6 +7,7 @@ type ButtonPropsType = {
   type?: string;
   to?: string;
   clickToShowAll?: () => void;
+  clickOnContactMe?: () => void;
 };
 
 export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
@@ -16,7 +17,7 @@ export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
       type={props.type}
       to={props.to}
       smooth={true}
-      onClick={props.clickToShowAll}
+      onClick={props.clickToShowAll || props.clickOnContactMe}
     >
       {props.title}
     </StyledButton>

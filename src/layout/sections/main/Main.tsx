@@ -3,11 +3,29 @@ import { Icon } from "../../../components/icon/Icon";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { S } from "./Main_Styles";
-import { ThemeConsumer } from "styled-components";
+import React from "react";
+import ContactMePopup from "./contactMePopup/ContactMePopup";
 
 export const Main: React.FC<{ isDarkTheme: boolean }> = (props: {
   isDarkTheme: boolean;
 }) => {
+  const [isPopupOpen, setIsPopupOpen] = React.useState<boolean>(false);
+
+  const clickOnContactMe = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
+  const popupRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    let handler = (e: MouseEvent) => {
+      if (popupRef.current && !popupRef.current.contains(e.target as Node)) {
+        setIsPopupOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+  }, []);
   return (
     <S.Main id="home">
       <Container>
@@ -20,7 +38,8 @@ export const Main: React.FC<{ isDarkTheme: boolean }> = (props: {
               amet sint. Velit officia consequat duis enim velit mollit.
               Exercitation veniam consequat sunt.
             </S.Text>
-            <Button title="Contact me" />
+            {isPopupOpen && <ContactMePopup popupRef={popupRef} />}
+            <Button title="Contact me" clickOnContactMe={clickOnContactMe} />
           </S.UserInfo>
 
           <Icon

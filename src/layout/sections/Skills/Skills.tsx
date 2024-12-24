@@ -45,7 +45,13 @@ export const Skills: React.FC = (props: Props) => {
           justify="center"
         >
           {skillData.map((item, index) => {
-            return <Skill title={item.title} iconId={item.iconId}></Skill>;
+            return (
+              <Skill
+                key={index}
+                title={item.title}
+                iconId={item.iconId}
+              ></Skill>
+            );
           })}
         </GridWrapper>
       </Container>

@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 
 const About = styled.section`
-  background-color: ${(props) => props.theme.colors.colorBg};
-  color: ${(props) => props.theme.colors.font};
   margin-bottom: 140px;
 
   @media ${(props) => props.theme.media.mobile} {

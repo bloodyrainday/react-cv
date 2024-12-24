@@ -6,6 +6,7 @@ import projectImage from "../../../assets/images/picture_2.png";
 import { Container } from "../../../components/Container";
 import { S } from "./Projects_Styles";
 import React from "react";
+import { GridWrapper } from "../../../components/GridWrapper";
 
 type projectDataPropsType = {
   title: string;
@@ -57,7 +58,11 @@ export const Projects: React.FC = (props) => {
       <Container>
         <SectionTitle>Projects</SectionTitle>
 
-        <FlexWrapper justify="space-between" gap="27px" wrap="wrap">
+        <GridWrapper
+          justify="space-between"
+          gap="27px"
+          gridTemplateColumns="1fr 1fr"
+        >
           {data &&
             data.map((item, index) => {
               return (
@@ -70,7 +75,7 @@ export const Projects: React.FC = (props) => {
                 />
               );
             })}
-        </FlexWrapper>
+        </GridWrapper>
 
         {isShownAll || (
           <Button title="See all projects" clickToShowAll={clickToShowAll} />

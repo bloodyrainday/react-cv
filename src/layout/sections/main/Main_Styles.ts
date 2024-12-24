@@ -44,8 +44,6 @@ const ButtonArrow = styled(Link)`
 `;
 
 const Main = styled.section`
-  background-color: ${(props) => props.theme.colors.colorBg};
-  color: ${(props) => props.theme.colors.font};
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -117,6 +115,42 @@ const Text = styled.p`
   }
 `;
 
+const ContactMePopup = styled.div`
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+
+  h2 {
+    display: none;
+  }
+
+  form {
+    background-color: ${(props) => props.theme.colors.colorBg};
+    border: 2px solid ${(props) => props.theme.colors.primary};
+    padding: 20px 50px;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    margin: 25px;
+    resize: none;
+
+    button {
+      display: block;
+      width: 100%;
+    }
+  }
+`;
+
+const Wrapper = styled.div``;
+
 export const S = {
   UserInfo,
   ButtonArrow,
@@ -124,4 +158,6 @@ export const S = {
   Title,
   Name,
   Text,
+  ContactMePopup,
+  Wrapper,
 };

@@ -1,11 +1,13 @@
-import React, { ElementRef } from "react";
+import React, { ElementRef, MutableRefObject } from "react";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Button } from "../../../components/button/Button";
 import { Container } from "../../../components/Container";
 import { S } from "./Contacts_Styles";
 import emailjs from "@emailjs/browser";
 
-type Props = {};
+type Props = {
+  ref?: MutableRefObject<HTMLDivElement | null>;
+};
 
 export const Contacts: React.FC = (props: Props) => {
   const form = React.useRef<ElementRef<"form">>(null);
@@ -32,7 +34,7 @@ export const Contacts: React.FC = (props: Props) => {
   };
 
   return (
-    <S.Contacts id="contacts">
+    <S.Contacts id="contacts" ref={props.ref}>
       <Container>
         <SectionTitle>Contacts</SectionTitle>
 
