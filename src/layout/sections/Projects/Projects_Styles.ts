@@ -9,7 +9,7 @@ const Projects = styled.section`
   @media ${(props) => props.theme.media.tablet} {
     ${GridWrapper} {
       grid-template-columns: 1fr;
-      justify-content: center;
+      justify-content: space-between;
     }
   }
 
@@ -39,7 +39,7 @@ const Projects = styled.section`
 
 const Project = styled.article`
   position: relative;
-  max-width: 522px;
+  width: 522px;
   width: 100%;
   background-color: ${(props) => props.theme.colors.projectBg};
   border-radius: 6px;

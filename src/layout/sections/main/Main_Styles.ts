@@ -125,6 +125,10 @@ const ContactMePopup = styled.div`
   width: 100%;
   height: 100%;
   backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
 
   h2 {
     display: none;
@@ -135,11 +139,10 @@ const ContactMePopup = styled.div`
     border: 2px solid ${(props) => props.theme.colors.primary};
     padding: 20px 50px;
     border-radius: 20px;
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    margin: 25px;
+    transform: translateY(-50%) translateX(-50%); */
     resize: none;
 
     button {
@@ -149,7 +152,15 @@ const ContactMePopup = styled.div`
   }
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  section {
+    margin: 0;
+
+    div {
+      padding: 0;
+    }
+  }
+`;
 
 export const S = {
   UserInfo,

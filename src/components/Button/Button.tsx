@@ -17,6 +17,7 @@ export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
       type={props.type}
       to={props.to}
       smooth={true}
+      offset={-100}
       onClick={props.clickToShowAll || props.clickOnContactMe}
     >
       {props.title}

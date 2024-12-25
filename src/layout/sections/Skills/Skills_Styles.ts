@@ -19,7 +19,7 @@ const Skills = styled.section`
 
   @media ${(props) => props.theme.media.mobile} {
     ${GridWrapper} {
-      gap: 48px;
+      gap: 35px;
     }
   }
 `;

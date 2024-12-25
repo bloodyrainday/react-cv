@@ -33,7 +33,7 @@ const NavLink: React.FC<LinkPropsType> = (props: LinkPropsType) => {
       smooth={true}
       activeClass="active"
       spy={true}
-      offset={0}
+      offset={-100}
     >
       {props.name}
     </StyledLink>

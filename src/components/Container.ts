@@ -6,4 +6,8 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100%;
   margin: 0 auto;
+
+  @media ${(props) => props.theme.media.mobile} {
+    padding: 0 15px;
+  }
 `;
