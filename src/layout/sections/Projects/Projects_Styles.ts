@@ -44,6 +44,11 @@ const Project = styled.article`
   background-color: ${(props) => props.theme.colors.projectBg};
   border-radius: 6px;
   box-shadow: 2px 2px 32px 0px #28262c26;
+  cursor: pointer;
+
+  &:hover {
+    scale: 1.05;
+  }
 `;
 
 const ProjectInfo = styled.div`
