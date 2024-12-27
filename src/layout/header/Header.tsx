@@ -4,9 +4,11 @@ import MobileMenu from "./headerMenu/mobileMenu/MobileMenu";
 import DesktopMenu from "./headerMenu/desktopMenu/DesktopMenu";
 import { S } from "./Header_Styles";
 
-type Props = {};
+type HeaderPropsType = {
+  toggleTheme: () => void;
+};
 
-export const Header: React.FC = (props: Props) => {
+export const Header: React.FC<HeaderPropsType> = (props: HeaderPropsType) => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 768;
 
@@ -19,7 +21,11 @@ export const Header: React.FC = (props: Props) => {
   return (
     <S.Header>
       <Container>
-        {width > breakpoint ? <DesktopMenu /> : <MobileMenu />}
+        {width > breakpoint ? (
+          <DesktopMenu />
+        ) : (
+          <MobileMenu toggleTheme={props.toggleTheme} />
+        )}
       </Container>
     </S.Header>
   );

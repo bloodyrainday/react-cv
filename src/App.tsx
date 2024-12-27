@@ -14,6 +14,16 @@ import DarkModeToggle from "./components/darkModeToggle/DarkModeToggle";
 import { Wrapper } from "./components/Wrapper";
 
 function App() {
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 768;
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   const [theme, setTheme] = React.useState("light");
   const isDarkTheme = theme === "dark";
 
@@ -34,7 +44,7 @@ function App() {
         <Wrapper>
           <Particle isDarkTheme={isDarkTheme} />
 
-          <Header />
+          <Header toggleTheme={toggleTheme} />
           <Main isDarkTheme={isDarkTheme} />
           <About />
           <Projects />
@@ -43,7 +53,7 @@ function App() {
           <Contacts />
           <Footer />
 
-          <DarkModeToggle toggleTheme={toggleTheme} />
+          {width > breakpoint && <DarkModeToggle toggleTheme={toggleTheme} />}
         </Wrapper>
       </ThemeProvider>
     </div>
