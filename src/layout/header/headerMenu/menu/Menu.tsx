@@ -3,7 +3,9 @@ import { Button } from "../../../../components/button/Button";
 import { NavLinks } from "../../../../components/navLinks/NavLinks";
 import { Link } from "react-scroll";
 
-const Menu: React.FC = (props) => {
+type MenuPropsType = {};
+
+const Menu: React.FC<MenuPropsType> = (props: MenuPropsType) => {
   return (
     <>
       <NavLinks />

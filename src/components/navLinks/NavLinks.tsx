@@ -2,7 +2,11 @@ import React from "react";
 import NavLink from "../navlink/NavLink";
 import { S } from "./NavLinks_Styles";
 
-export const NavLinks: React.FC = (props) => {
+type NavLinksPropsType = {};
+
+export const NavLinks: React.FC<NavLinksPropsType> = (
+  props: NavLinksPropsType
+) => {
   const navItems = [
     {
       name: "Home",

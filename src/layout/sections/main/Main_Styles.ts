@@ -74,9 +74,12 @@ const Main = styled.section`
   }
 
   @media ${(props) => props.theme.media.mobile} {
+    margin-bottom: 100px;
+
     ${FlexWrapper} > svg {
       width: 320px;
       height: 230px;
+      margin-bottom: 15px;
     }
   }
 `;
