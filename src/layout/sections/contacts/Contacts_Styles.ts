@@ -3,6 +3,8 @@ import { SectionTitle } from "../../../components/SectionTitle";
 
 const Contacts = styled.section`
   margin-bottom: 190px;
+  position: relative;
+  background-color: ${(props) => props.theme.colors.colorBg};
 
   @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 150px;

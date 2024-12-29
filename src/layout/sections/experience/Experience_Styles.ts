@@ -19,6 +19,7 @@ const CheckPoint = styled.div`
   padding-top: 2em;
   padding-bottom: 2em;
   position: relative;
+  background-color: ${(props) => props.theme.colors.colorBg};
 
   &:nth-child(odd) {
     border-left: 5px solid ${(props) => props.theme.colors.primary};

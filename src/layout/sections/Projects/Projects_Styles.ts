@@ -45,6 +45,7 @@ const Project = styled.article`
   border-radius: 6px;
   box-shadow: 2px 2px 32px 0px #28262c26;
   cursor: pointer;
+  transition: scale 0.2s ease-in-out;
 
   &:hover {
     scale: 1.05;

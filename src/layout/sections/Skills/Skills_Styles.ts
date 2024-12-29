@@ -5,6 +5,8 @@ import { font } from "../../../styles/Common";
 
 const Skills = styled.section`
   margin-bottom: 140px;
+  position: relative;
+  background-color: ${(props) => props.theme.colors.colorBg};
 
   @media ${(props) => props.theme.media.mobile} {
     margin-bottom: 100px;
