@@ -5,6 +5,7 @@ import { animateScroll, Link } from "react-scroll";
 type LinkPropsType = {
   name: string;
   href: string;
+  setMenuIsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 };
 
 const moveToTheTop = (href: string) => {
@@ -28,7 +29,10 @@ const NavLink: React.FC<LinkPropsType> = (props: LinkPropsType) => {
 
   return (
     <StyledLink
-      onClick={moveToTheTop(props.href)}
+      onClick={() => {
+        moveToTheTop(props.href);
+        props.setMenuIsOpen && props.setMenuIsOpen(false);
+      }}
       to={props.href}
       smooth={true}
       activeClass="active"

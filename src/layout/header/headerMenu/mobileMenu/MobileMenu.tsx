@@ -28,7 +28,7 @@ const MobileMenu: React.FC<MobileMenuPropsType> = (
         isOpen={menuIsOpen}
         onClick={() => setMenuIsOpen(false)}
       >
-        <Menu />
+        <Menu setMenuIsOpen={setMenuIsOpen} />
         <DarkModeToggle toggleTheme={props.toggleTheme} />
       </S.MobileMenuPopup>
     </S.MobileMenu>

@@ -3,13 +3,20 @@ import { Button } from "../../../../components/button/Button";
 import { NavLinks } from "../../../../components/navLinks/NavLinks";
 import { Link } from "react-scroll";
 
-type MenuPropsType = {};
+type MenuPropsType = {
+  setMenuIsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
+};
 
 const Menu: React.FC<MenuPropsType> = (props: MenuPropsType) => {
   return (
     <>
-      <NavLinks />
-      <Button as={Link} to="contacts" title="Contact" />
+      <NavLinks setMenuIsOpen={props.setMenuIsOpen} />
+      <Button
+        as={Link}
+        to="contacts"
+        title="Contact"
+        setMenuIsOpen={props.setMenuIsOpen}
+      />
     </>
   );
 };

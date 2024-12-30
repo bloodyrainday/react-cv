@@ -8,6 +8,7 @@ type ButtonPropsType = {
   to?: string;
   clickToShowAll?: () => void;
   clickOnContactMe?: () => void;
+  setMenuIsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 };
 
 export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
