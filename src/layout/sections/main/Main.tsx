@@ -39,7 +39,7 @@ export const Main: React.FC<{ isDarkTheme: boolean }> = (props: {
               Exercitation veniam consequat sunt.
             </S.Text>
             {isPopupOpen && <ContactMePopup popupRef={popupRef} />}
-            <Button title="Contact me" clickOnContactMe={clickOnContactMe} />
+            <Button title="Contact me" callback={clickOnContactMe} />
           </S.UserInfo>
 
           <Icon

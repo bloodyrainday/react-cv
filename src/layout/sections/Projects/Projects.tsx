@@ -78,7 +78,7 @@ export const Projects: React.FC = (props) => {
         </GridWrapper>
 
         {isShownAll || (
-          <Button title="See all projects" clickToShowAll={clickToShowAll} />
+          <Button title="See all projects" callback={clickToShowAll} />
         )}
       </Container>
     </S.Projects>

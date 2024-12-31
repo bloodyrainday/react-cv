@@ -6,12 +6,16 @@ type ButtonPropsType = {
   as?: React.ElementType | keyof JSX.IntrinsicElements;
   type?: string;
   to?: string;
-  clickToShowAll?: () => void;
-  clickOnContactMe?: () => void;
+  callback?: () => void;
   setMenuIsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 };
 
 export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
+  const onClickHandler = () => {
+    props.callback && props.callback();
+    props.setMenuIsOpen && props.setMenuIsOpen(false);
+  };
+
   return (
     <StyledButton
       as={props.as}
@@ -19,7 +23,7 @@ export const Button: React.FC<ButtonPropsType> = (props: ButtonPropsType) => {
       to={props.to}
       smooth={true}
       offset={-100}
-      onClick={props.clickToShowAll || props.clickOnContactMe}
+      onClick={onClickHandler}
     >
       {props.title}
     </StyledButton>
