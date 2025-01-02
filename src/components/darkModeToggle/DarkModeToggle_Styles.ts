@@ -55,7 +55,7 @@ const Checkbox = styled.input`
   display: none;
 
   &:checked + ${Slider} {
-    background-color: green;
+    background-color: rgb(42, 54, 77);
   }
 
   &:checked + ${Slider}:before {
