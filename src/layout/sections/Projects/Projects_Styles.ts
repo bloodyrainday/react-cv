@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { GridWrapper } from "../../../components/GridWrapper";
 
@@ -37,7 +36,7 @@ const Projects = styled.section`
   }
 `;
 
-const Project = styled.article`
+const Project = styled.a`
   position: relative;
   width: 522px;
   width: 100%;
