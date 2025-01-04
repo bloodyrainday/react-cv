@@ -1,8 +1,10 @@
 import { SectionTitle } from "../../../components/SectionTitle";
-import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Button } from "../../../components/button/Button";
 import { Project } from "./project/Project";
-import projectImage from "../../../assets/images/picture_2.png";
+import libraryProject from "../../../assets/images/library.png";
+import coffeeProject from "../../../assets/images/coffee.png";
+import sneakersProject from "../../../assets/images/sneakers.png";
+import todolistProject from "../../../assets/images/todolist.png";
 import { Container } from "../../../components/Container";
 import { S } from "./Projects_Styles";
 import React from "react";
@@ -11,30 +13,35 @@ import { GridWrapper } from "../../../components/GridWrapper";
 type projectDataPropsType = {
   title: string;
   text: string;
+  image: string;
   technologies: string[];
 };
 
 const projectData = [
   {
-    title: "TITLE PROJECT",
+    title: "The Brooklyn Library website",
     text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    technologies: ["Javascript", "PostgreSQL", "React", "Redux"],
+    technologies: ["Javascript"],
+    image: `${libraryProject}`,
   },
   {
-    title: "I N S I G H T G R A M",
+    title: "Coffee Shop",
     text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    technologies: ["Javascript", "React Native", "Redux"],
+    technologies: ["Javascript", "React"],
+    image: `${coffeeProject}`,
   },
 
   {
-    title: "TITLE PROJECT",
+    title: "Sneaker Store",
     text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    technologies: ["Javascript", "PostgreSQL", "React", "Redux"],
+    technologies: ["Javascript", "React", "SASS"],
+    image: `${sneakersProject}`,
   },
   {
-    title: "I N S I G H T G R A M",
+    title: "Todo List",
     text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    technologies: ["Javascript", "React Native", "Redux"],
+    technologies: ["Javascript", "React", "SASS", "TypeScript"],
+    image: `${todolistProject}`,
   },
 ];
 
@@ -69,7 +76,7 @@ export const Projects: React.FC = (props) => {
                 <Project
                   key={index}
                   title={item.title}
-                  src={projectImage}
+                  image={item.image}
                   technologies={item.technologies}
                   text={item.text}
                 />

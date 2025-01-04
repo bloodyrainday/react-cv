@@ -5,7 +5,7 @@ type ProjectPropsType = {
   title: string;
   technologies: Array<string>;
   text: string;
-  src: string;
+  image: string;
 };
 
 export const Project: React.FC<ProjectPropsType> = (
@@ -13,7 +13,7 @@ export const Project: React.FC<ProjectPropsType> = (
 ) => {
   return (
     <S.Project>
-      <S.Image src={props.src} alt="project-image" />
+      <S.Image src={props.image} alt="project-image" />
 
       <S.ProjectInfo>
         <S.Title>{props.title}</S.Title>
