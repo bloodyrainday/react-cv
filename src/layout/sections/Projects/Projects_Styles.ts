@@ -41,6 +41,7 @@ const Project = styled.a`
   width: 522px;
   width: 100%;
   background-color: ${(props) => props.theme.colors.projectBg};
+  color: ${(props) => props.theme.colors.font};
   border-radius: 6px;
   box-shadow: 2px 2px 32px 0px #28262c26;
   cursor: pointer;
