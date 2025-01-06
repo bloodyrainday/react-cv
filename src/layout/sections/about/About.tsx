@@ -12,13 +12,24 @@ export const About: React.FC = (props: Props) => {
         <FlexWrapper align="start" direction="column" gap="20px">
           <SectionTitle>About me</SectionTitle>
           <S.Text>
-            The long barrow was built on land previously inhabited in the
-            Mesolithic period. It consisted of a sub-rectangular earthen
-            tumulus, estimated to have been 15 metres (50 feet) in length, with
-            a chamber built from sarsen megaliths on its eastern end. Both
-            inhumed and cremated human remains were placed within this chamber
-            during the Neolithic period, representing at least nine or ten
-            individuals.
+            I graduated with a degree in Mechanical Engineering in 2022 and
+            gained two years of professional experience as a mechanical engineer
+            in a transport company. <br />
+            <br />
+            However, during my university years, I realized that engineering
+            wasn’t my true passion. Encouraged to explore programming, I
+            enrolled in the Rolling Scope School frontend online course while
+            working full-time. Through this course, I built my first projects
+            using JavaScript, HTML, and CSS, which ignited my enthusiasm for web
+            development. <br />
+            <br />
+            Driven by curiosity and determination, I continued self-learning and
+            I'm currently attending an advanced online course from IT-Incubator,
+            focusing on React and Redux-Toolkit. I am passionate about creating
+            dynamic and user-friendly web applications, and I’m excited to
+            transition into a career in frontend development where I can apply
+            my technical problem-solving skills and dedication to continuous
+            improvement.
           </S.Text>
         </FlexWrapper>
       </Container>
