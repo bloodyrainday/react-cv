@@ -4,13 +4,14 @@ import styled from "styled-components";
 
 type SocialLinkPropsType = {
   iconId: string;
+  link: string;
 };
 
 const SocialLink: React.FC<SocialLinkPropsType> = (
   props: SocialLinkPropsType
 ) => {
   return (
-    <StyledSocialLink>
+    <StyledSocialLink href={props.link} target="_blank">
       <Icon
         iconId={props.iconId}
         width="38px"
