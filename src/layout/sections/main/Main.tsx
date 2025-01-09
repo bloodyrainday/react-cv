@@ -34,9 +34,8 @@ export const Main: React.FC<{ isDarkTheme: boolean }> = (props: {
             <S.Title>Frontend Developer</S.Title>
             <S.Name>Mikita Bialko</S.Name>
             <S.Text>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt.
+              Driven by creativity and curiosity, I’m always ready to turn
+              challenges into opportunities and ideas into reality
             </S.Text>
             {isPopupOpen && <ContactMePopup popupRef={popupRef} />}
             <Button title="Contact me" callback={clickOnContactMe} />
