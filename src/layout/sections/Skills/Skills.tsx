@@ -31,6 +31,10 @@ const skillData = [
     title: "GIT",
     iconId: "gitIcon",
   },
+  {
+    title: "SASS",
+    iconId: "sassIcon",
+  },
 ];
 
 export const Skills: React.FC = (props: Props) => {
