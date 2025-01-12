@@ -35,6 +35,18 @@ const skillData = [
     title: "SASS",
     iconId: "sassIcon",
   },
+  {
+    title: "Figma",
+    iconId: "figmaIcon",
+  },
+  {
+    title: "HTML",
+    iconId: "htmlIcon",
+  },
+  {
+    title: "CSS",
+    iconId: "cssIcon",
+  },
 ];
 
 export const Skills: React.FC = (props: Props) => {
