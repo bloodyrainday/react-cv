@@ -25,7 +25,13 @@ export const Main: React.FC<{ isDarkTheme: boolean }> = (props: {
     };
 
     document.addEventListener("mousedown", handler);
-  }, []);
+
+    if (isPopupOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isPopupOpen]);
   return (
     <S.Main id="home">
       <Container>

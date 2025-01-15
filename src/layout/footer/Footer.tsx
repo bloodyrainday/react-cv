@@ -6,9 +6,14 @@ type Props = {};
 
 const socialsData = [
   {
+    name: "TELEGRAM",
+    iconId: "telegramIcon",
+    link: "https://t.me/panmiki",
+  },
+  {
     name: "LINKEDIN",
     iconId: "linkedinIcon",
-    link: "https://www.linkedin.com/in/mikita-bia%C5%82ko-14a448260/",
+    link: "https://www.linkedin.com/in/mikita-bialko-14a448260/",
   },
   {
     name: "GITHUB",

@@ -19,10 +19,10 @@ const skillData = [
     title: "REACT",
     iconId: "reactIcon",
   },
-  {
-    title: "REDUX TOOLKIT",
-    iconId: "reduxIcon",
-  },
+  // {
+  //   title: "REDUX TOOLKIT",
+  //   iconId: "reduxIcon",
+  // },
   {
     title: "STYLED COMPONENTS",
     iconId: "scIcon",

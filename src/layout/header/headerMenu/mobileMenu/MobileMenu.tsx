@@ -18,6 +18,14 @@ const MobileMenu: React.FC<MobileMenuPropsType> = (
     setMenuIsOpen(!menuIsOpen);
   };
 
+  React.useEffect(() => {
+    if (menuIsOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [menuIsOpen]);
+
   return (
     <S.MobileMenu>
       <S.BurgerButton onClick={openMobileMenu} isOpen={menuIsOpen}>

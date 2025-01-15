@@ -45,10 +45,10 @@ const Project = styled.a`
   border-radius: 6px;
   box-shadow: 2px 2px 32px 0px #28262c26;
   cursor: pointer;
-  transition: scale 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
-    scale: 1.05;
+    box-shadow: 20px 20px 54px 0px #28262c26;
   }
 `;
 
