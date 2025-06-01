@@ -21,11 +21,11 @@ const experience = [
     year: "2024",
     text: "Expanded my technical skill set by learning advanced technologies like React and TypeScript. Enrolled in the online IT-Incubator course to refine my frontend development expertise through structured learning and practical applications.",
   },
-  // {
-  //   id: 3,
-  //   year: "2025",
-  //   text: "Successfully completed the IT-Incubator course, mastering core concepts of frontend development. Enhanced my skill set further by diving into Redux Toolkit and applying it to manage complex application states.",
-  // },
+  {
+    id: 3,
+    year: "2025",
+    text: "Successfully completed the IT-Incubator course, mastering core concepts of frontend development. Enhanced my skill set further by diving into Redux Toolkit and applying it to manage complex application states.",
+  },
 ];
 
 const Experience: React.FC = (props: Props) => {
